@@ -1,4 +1,4 @@
-var BounceHandler = require('lib/bouncehandler').BounceHandler;
+var BounceHandler = require('../lib/bouncehandler').BounceHandler;
 var fs = require('fs');
 var util = require('util');
 
@@ -13,16 +13,16 @@ if (argv.length == 1) {
 			var data = fs.readFileSync(dir+'/'+files[index]);
 			var bh   = new BounceHandler();
 			var res  = bh.parse_email(data.toString());
-			
+
 			// FAILURE
-			if (res[0] && typeof res[0]['status'] != 'string') {	
+			if (res[0] && typeof res[0]['status'] != 'string') {
 				console.log('-- ' + files[index] + ' -- PARSE ERR');
 				console.log(res);
 			} else if (!res[0]['messageid']) {
 				console.log('-- ' + files[index] + ' -- PARSE ERR (messageid)');
-				console.log(res); 
+				console.log(res);
 			} else {
-				console.log(util.format('-- ' + files[index] + ' -- PARSE OK [%s, %s, %s, %s]', 
+				console.log(util.format('-- ' + files[index] + ' -- PARSE OK [%s, %s, %s, %s]',
 					res[0]['status'], res[0]['action'], res[0]['recipient'], res[0]['messageid']));
 			}
 		}
