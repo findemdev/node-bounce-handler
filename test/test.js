@@ -6,8 +6,8 @@ var util = require('util');
 
 var argv = process.argv.splice(1);
 if (argv.length == 1) {
-    var dir = 'eml';
-    fs.readdir('eml', function (err, files) {
+    var dir = __dirname + '/../eml';
+    fs.readdir(dir, function (err, files) {
         if (err) {
             throw err;
         }
@@ -17,13 +17,13 @@ if (argv.length == 1) {
             }
             var data = fs.readFileSync(dir + '/' + files[index]);
             var bh = new BounceHandler();
-            var res = bh.parse_email(data.toString());
+            var res = bh.parse_email(data.toString(), true);
 
             // FAILURE
             if (res[0] && typeof res[0]['status'] != 'string') {
                 console.log('-- ' + files[index] + ' -- PARSE ERR');
                 console.log(res);
-            } else if (!res[0]['messageid']) {
+            } else if (!res[0]['messageid'] && res[0]['status'] !== '200') {
                 console.log('-- ' + files[index] + ' -- PARSE ERR (messageid)');
                 console.log(res);
             } else {

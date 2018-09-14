@@ -1,0 +1,79 @@
+Return-Path: <01010165d7d4e26b-83ddc868-d6cc-46e1-a3f5-9f5f86a1b25a-000000@us-west-2.amazonses.com>
+X-Original-To: npm@example.com
+Delivered-To: admin@example.com
+Received: from a27-22.smtp-out.us-west-2.amazonses.com (a27-22.smtp-out.us-west-2.amazonses.com [54.240.27.22])
+	by h2342671.stratoserver.net (Postfix) with ESMTPS id 740C7162C0720
+	for <npm@example.com>; Fri, 14 Sep 2018 13:26:20 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=nsu4syumhuvqjh53wxqpvqtiodtv7wlm; d=npmjs.com; t=1536924377;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version;
+	bh=K9OgWO30PRgS0f/vjv7rAGoku8DSWvW8TMapQVCVCiA=;
+	b=gIe59dxJS8BpoIKiIJj/XW9shMXNZeri5snX4kqFqcwb0+LdD4D8R+FJJfsNyiOE
+	sRynqSvO/WXriF5+sxU6wFSRTOVFF7iJ8uAfgDb+p5dLLqsCTZMLNfHRGwLu0HsqDVo
+	Xx2BEEaBHP17WNeNGvqTA5f/x6sX7yNPqTot2aho=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=7v7vs6w47njt4pimodk5mmttbegzsi6n; d=amazonses.com; t=1536924377;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Feedback-ID;
+	bh=K9OgWO30PRgS0f/vjv7rAGoku8DSWvW8TMapQVCVCiA=;
+	b=dAA1rGke9hDLkG7rI34wJDtsODr2qGko2eh+uo4eYjamt6lWNsuukk0GCDRrvhlO
+	jNp6ncMCy3q6v5EkYyFC6Gki8J+gB3i4Z1UOIcvBZZFXHxVvuyJ2hMMD7Lxn0qkixcR
+	oC8nMx0PDitd6BmyuDoVLt+OSdKKPoN6xIsjAJqk=
+Content-Type: text/plain; charset=utf-8
+From: "npm, Inc." <support@npmjs.com>
+To: example <npm@example.com>
+Subject: Welcome to npm!
+Message-ID: <01010165d7d4e26b-83ddc868-d6cc-46e1-a3f5-9f5f86a1b25a-000000@us-west-2.amazonses.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Fri, 14 Sep 2018 11:26:17 +0000
+MIME-Version: 1.0
+X-SES-Outgoing: 2018.09.14-54.240.27.22
+Feedback-ID: 1.us-west-2.QCkaiySqYRi/EL0Tazamf+JqrrCR4Lz8hTmrIIHnXTM=:AmazonSES
+
+Hi example!
+
+Welcome to npm.
+
+npm makes it easy for developers to create, =
+share, and discover packages of code and reuse them in new ways. The more =
+packages we all create, the more efficient and creative everyone becomes =
+=E2=80=94 so we=E2=80=99re glad you=E2=80=99re here!=20
+
+
+YOUR ACCOUNT
+
+Your npmjs.com account is =E2=80=9Cexample=E2=80=9D. Log in at https://go.npm=
+.me/login
+If you ever forget your password, you can reset it at https://go.=
+npm.me/forgot
+
+
+GETTING STARTED
+
+Everything =E2=80=94 from the basics of =
+publishing & installing with the command-line interface, to the juicy stuff=
+ like scopes & teams =E2=80=94 is here: https://go.npm.me/docs. Dive in!
+
+
+NEED HELP?
+
+Have a question? Run into trouble? We=E2=80=99re always happy =
+to lend a hand.
+
+Create a support ticket at https://go.npm.me/support, =
+tweet us a question at https://go.npm.me/npm_support, or drop us a line at =
+support@npmjs.com. (You can also reply to this message).
+
+
+BRING US TO WORK
+
+You can combine public & private packages, manage group permissions, =
+mirror the registry behind your firewall, and more. Take a look!: =
+https://go.npm.me/features
+
+
+Thanks for joining the community. =
+Can=E2=80=99t wait to see what you build=E2=80=A6
+
+
+
+npm =E2=99=A5 you!
