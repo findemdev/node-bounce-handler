@@ -1,14 +1,14 @@
 > This is a fork of [prasad83/node-bounce-handler](https://github.com/prasad83/node-bounce-handler).
 
-# NodeJS Bounce Handler
+# NodeJS Bounce Snoop
 
 Port of (PHP-Bounce-Handler - <https://github.com/cfortune/PHP-Bounce-Handler> v7.3) in NodeJS.
 
 # Usage
 
 ```javascript
-  var BounceHandler = require('bounce-handler').BounceHandler;
-  var bh = new BounceHandler();
+  var MailBounceSnoop = require('bounce-handler').MailBounceSnoop;
+  var bh = new MailBounceSnoop();
   var bounceResult = bh.parse_email(emlDataString);
 ```
 

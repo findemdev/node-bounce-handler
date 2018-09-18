@@ -20,7 +20,19 @@
       "url": "https://github.com/byskr/node-bounce-handler/raw/master/LICENSE"
     }
   ],
+  "scripts": {
+    "postversion": "git push && git push --tags",
+    "test": "mocha test/**/*.js",
+    "posttest": "npm run coverage",
+    "coverage": "istanbul cover _mocha"
+  },
   "dependencies": {
     "libmime": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0"
   }
 }
