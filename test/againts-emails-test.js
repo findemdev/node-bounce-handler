@@ -1,5 +1,5 @@
 const fs = require('fs');
-const detect = require('../detect');
+const detect = require('../index');
 const expect = require('chai').expect;
 
 function readFiles(dir, cb) {
