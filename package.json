@@ -6,7 +6,7 @@
     "name": "Daniel Weise",
     "email": "git@byskr.com"
   },
-  "version": "1.1.0",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/byskr/node-bounce-handler.git"
