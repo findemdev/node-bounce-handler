@@ -1,12 +1,14 @@
+'use strict';
+
 const EOL = '\r\n';
 const PARTS_DELIMITER = EOL + EOL;
 const libmime = require('libmime');
 
 module.exports = class Email {
   constructor(plainMessage) {
-    this.plainMessage = "";
-    this.headerPlain = "";
-    this.bodyPlain = "";
+    this.plainMessage = '';
+    this.headerPlain = '';
+    this.bodyPlain = '';
     this.header = new Map();
 
     this.setMessage(plainMessage);
@@ -88,7 +90,7 @@ module.exports = class Email {
   processHeaders(lines) {
     let headers = new Map();
     (lines || []).forEach(line => {
-      let key = line.key ? line.key : "";
+      let key = line.key ? line.key : '';
       let value = ((libmime.decodeHeader(line.line) || {}).value || '').toString().trim();
       value = Buffer.from(value, 'binary').toString();
       switch (key) {

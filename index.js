@@ -1,3 +1,5 @@
+'use strict';
+
 const MailBounceSnoop = require('./mail-bounce-snoop').MailBounceSnoop;
 const Email = require('./email');
 
@@ -30,7 +32,7 @@ module.exports = {
   },
 
   isBounced: function (cb) {
-    if (typeof cb === "undefined") {
+    if (typeof cb === 'undefined') {
       return detectPromise(this.email, false).then(result => {
         return isBounce(result)
       });
@@ -48,7 +50,7 @@ module.exports = {
   },
 
   getBouncedDetail: function (cb) {
-    if (typeof cb === "undefined") {
+    if (typeof cb === 'undefined') {
       return detectPromise(this.email, true).then(result => {
         return result
       });

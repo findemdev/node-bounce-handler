@@ -1,8 +1,7 @@
-"use strict";
+'use strict';
 
 const bounce_responses = require('./responses');
 const libmime = require('libmime');
-const Email = require('./email');
 
 /* BOUNCE HANDLER Class, Version 7.3
  * Description: "chops up the bounce into associative arrays"
@@ -33,7 +32,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
     * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-    * Neither the name of the MailBounceSnoop nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+    * Neither the name of the MailBounceHandler nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
@@ -52,15 +51,15 @@ function MailBounceSnoop() {
 
 
   // accessors
-  this.type = "";
+  this.type = '';
 
   // these accessors are useful only for FBL's
   // or if the output array has only one index
-  this.action = "";
-  this.status = "";
-  this.subject = "";
-  this.recipient = "";
-  this.body = "";
+  this.action = '';
+  this.status = '';
+  this.subject = '';
+  this.recipient = '';
+  this.body = '';
 
   this.mime_sections = [];
 
@@ -69,11 +68,11 @@ function MailBounceSnoop() {
 
   /**** INSTANTIATION *******************************************************/
   this.output.push({
-    'action': "",
-    'status': "",
-    'recipient': "",
-    'messageid': "",
-    'is': ""
+    'action': '',
+    'status': '',
+    'recipient': '',
+    'messageid': '',
+    'is': ''
   });
 
   this.bouncelist = bounce_responses.bouncelist;
@@ -83,20 +82,20 @@ function MailBounceSnoop() {
   this.simpleCheckResponse = function () {
     switch (true) {
       case this.looks_like_a_bounce:
-        return "bounce";
+        return 'bounce';
       case this.looks_like_an_FBL:
-        return "FBL";
+        return 'FBL';
       case this.looks_like_an_autoresponse:
-        return "autoresponse";
+        return 'autoresponse';
       default:
-        return "OK"
+        return 'OK'
     }
   };
 
   this.looksLikeAnFBLAction = function (mail) {
     this.output[0]['action'] = 'failed';
-    this.output[0]['status'] = "5.7.1";
-    this.subject = mail.getHeader('subject').replace(/Fw:/gi, "").trim();
+    this.output[0]['status'] = '5.7.1';
+    this.subject = mail.getHeader('subject').replace(/Fw:/gi, '').trim();
     if (this.is_hotmail_fbl === true) {
       // fill in the fbl_hash with sensible values
       this.fbl_hash['Content-disposition'] = 'inline';
@@ -366,7 +365,7 @@ function MailBounceSnoop() {
       if (line.length) { // a bit-optimized to ignore scanning over blank lines
         for (let bouncetext in this.bouncelist) {
           let bouncecode = this.bouncelist[bouncetext];
-          matches = line.match(new RegExp(bouncetext, "ig"));
+          matches = line.match(new RegExp(bouncetext, 'ig'));
           if (matches) {
             return typeof (matches[1]) !== 'undefined' ? matches[1] : bouncecode;
           }
@@ -441,7 +440,7 @@ function MailBounceSnoop() {
 
   this.parse_body_into_mime_sections = function (body, boundary) {
     if (!boundary) return [];
-    if (typeof body === 'object' && typeof body.length !== 'undefined') body = body.join("\r\n");
+    if (typeof body === 'object' && typeof body.length !== 'undefined') body = body.join('\r\n');
     body = body.split(boundary);
     let mime_sections = {};
     mime_sections['first_body_part'] = body[1];
@@ -459,7 +458,7 @@ function MailBounceSnoop() {
       'Received': ''
     };
     if (typeof content === 'undefined') content = [];
-    if (typeof content === 'string') content = content.split("\r\n");
+    if (typeof content === 'string') content = content.split('\r\n');
 
     for (let i = 0; i < content.length; ++i) {
       let line = content[i];
@@ -475,7 +474,7 @@ function MailBounceSnoop() {
           // pile it on with pipe delimiters,
           // oh well, SMTP is broken in this way
           if (entity && array[2] && array[2] !== hash[entity]) {
-            hash[entity] += "|" + array[2].trim();
+            hash[entity] += '|' + array[2].trim();
           }
         }
       } else if (line.match(/^\s+(.+)\s*/) && entity) {
@@ -484,7 +483,7 @@ function MailBounceSnoop() {
     }
     // special formatting
     hash['Received'] = hash['Recieved'] ? hash['Recieved'].split('|') : '';
-    //hash['Subject'] = iconv_mime_decode(hash['Subject'], 0, "ISO-8859-1"); // REVIEW <<<<
+    //hash['Subject'] = iconv_mime_decode(hash['Subject'], 0, 'ISO-8859-1'); // REVIEW <<<<
 
     return hash;
   };
@@ -509,7 +508,7 @@ function MailBounceSnoop() {
     }
     //Per-Recipient DSN fields
     for (i = 0; i < hash['per_recipient'].length; i++) {
-      let temp = this.standard_parser(hash['per_recipient'][i].split("\r\n"));
+      let temp = this.standard_parser(hash['per_recipient'][i].split('\r\n'));
       arr = temp['Final-recipient'] ? temp['Final-recipient'].split(';') : [];
       temp['Final-recipient'] = this.format_final_recipient_array(arr);
       //temp['Final-recipient']['type'] = trim(arr[0]);
@@ -543,7 +542,7 @@ function MailBounceSnoop() {
   this.get_head_from_returned_message_body_part = function (mime_sections) {
     let head = {};
     if (mime_sections['returned_message_body_part']) {
-      let temp = mime_sections['returned_message_body_part'].split("\r\n\r\n");
+      let temp = mime_sections['returned_message_body_part'].split('\r\n\r\n');
       head = this.standard_parser(temp[1]);
       head['From'] = this.extract_address(head['From']);
       head['To'] = this.extract_address(head['To']);
@@ -577,9 +576,9 @@ function MailBounceSnoop() {
 
   this.find_type = function () {
     if (this.looks_like_a_bounce)
-      return "bounce";
+      return 'bounce';
     else if (this.looks_like_an_FBL)
-      return "fbl";
+      return 'fbl';
     else
       return false;
   };
@@ -632,7 +631,7 @@ function MailBounceSnoop() {
     let rfc1893 = require('./rfc1893-error-codes');
     let ret = this.format_status_code(code);
     let arr = ret['code'].split('.');
-    let str = "<P><B>" + rfc1893.status_code_classes[arr[0]]['title'] + "</B> - " + rfc1893.status_code_classes[arr[0]]['descr'] + "  <B>" + rfc1893.status_code_subclasses[arr[1] + "." + arr[2]]['title'] + "</B> - " + rfc1893.status_code_subclasses[arr[1] + "." + arr[2]]['descr'] + "</P>";
+    let str = '<P><B>' + rfc1893.status_code_classes[arr[0]]['title'] + '</B> - ' + rfc1893.status_code_classes[arr[0]]['descr'] + '  <B>' + rfc1893.status_code_subclasses[arr[1] + '.' + arr[2]]['title'] + '</B> - ' + rfc1893.status_code_subclasses[arr[1] + '.' + arr[2]]['descr'] + '</P>';
     return str;
   };
 
@@ -711,7 +710,6 @@ function MailBounceSnoop() {
     for (let i = 0; i < this.autorespondlist.length; ++i) {
       let a = this.autorespondlist[i];
       if (subj.match(new RegExp("/" + a + "/", "i"))) {
-        //echo "a , subj"; exit;
         this.autoresponse = mail.getHeader('subject');
         return true;
       }
