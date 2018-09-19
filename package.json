@@ -8,7 +8,7 @@
     "dasrick <dasrick@gmail.com>",
     "tacitly <tacitly@little15.de>"
   ],
-  "main": "./lib/bouncehandler",
+  "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "Daniel Weise",
