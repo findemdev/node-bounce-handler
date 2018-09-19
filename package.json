@@ -1,10 +1,22 @@
 {
   "name": "mail-bounce-snoop",
   "description": "Parse email bounce notification messages",
+  "keywords": [
+    "email bounce"
+  ],
+  "contributors": [
+    "dasrick <dasrick@gmail.com>",
+    "tacitly <tacitly@little15.de>"
+  ],
   "main": "./lib/bouncehandler",
+  "license": "MIT",
   "author": {
     "name": "Daniel Weise",
     "email": "git@byskr.com"
+  },
+  "homepage": "https://github.com/byskr/node-bounce-handler",
+  "engines": {
+    "node": ">=10.0.0"
   },
   "version": "2.0.1",
   "repository": {

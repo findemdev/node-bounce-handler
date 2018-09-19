@@ -1,6 +1,8 @@
 > This is a fork of 
 
 # Node Bounce Snoop
+[![github tag][github-tag-image]][github-tag-url]
+[![Build Status][travis-image]][travis-url]
 
 Based on 
   - [prasad83/node-bounce-handler](https://github.com/prasad83/node-bounce-handler).
@@ -83,3 +85,9 @@ This should help (email is messy) to detect if an email message is a bounce mess
   });
 
 ```
+
+[github-tag-image]: https://img.shields.io/github/tag/byskr/node-bounce-handler.svg?style=flat-square
+[github-tag-url]: https://github.com/byskr/node-bounce-handler
+
+[travis-image]: https://travis-ci.org/byskr/node-bounce-handler.svg?branch=master
+[travis-url]: https://travis-ci.org/byskr/node-bounce-handler
