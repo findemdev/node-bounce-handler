@@ -1,0 +1,313 @@
+Delivered-To: ntumacder@murdockmartell.com
+Received: by 2002:ab3:1614:0:0:0:0:0 with SMTP id b20csp10606663lta;
+        Mon, 9 Mar 2020 11:30:43 -0700 (PDT)
+X-Received: by 2002:a05:651c:2007:: with SMTP id s7mr3227065ljo.214.1583778643614;
+        Mon, 09 Mar 2020 11:30:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1583778643; cv=none;
+        d=google.com; s=arc-20160816;
+        b=p0kT1mCWo8Zh+AfdBbaHniYKeSAv3894PS/zKfWCIWvE2T7fBm6uRx+SN9gXlM5Z//
+         51nyc5BXb8jFyiImzvs5KfWuRYCOeUf/TZWM1HF6trUjjwsF7hndaY+iRGZyv3CIEi+B
+         bD6JNUAkMZN+lbru/uOZqtH/1UxCDRW2meFcqvFlwybKo9fKqO3MAFgHSVE7mnqr9cSY
+         aYG6inNbQr39L7x1SftufYcuzm0a87rIL2ePgrGf5LHluGbs+MJnQ+KJUSwK6AvIJEhb
+         FwKx6uIZUrxr6O3mTnoUlCIzTvdrVeOLFPHFg9hqwl3gXjFmoXZmVCyH/DNS535l6SZ2
+         k5lg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=in-reply-to:references:subject:from:date:message-id:auto-submitted
+         :to:dkim-signature;
+        bh=Q767YuH+bRAP4/I9u1kHH6SdpnzQj6h3h6mg/so9+Yg=;
+        b=f3YrIasIIgMMIPI+0nU/V8qOHOwZTQxN7oFbOvyz9OAlNagxGpbxgyCjWh9DMaFfY0
+         I10RjkUrg+mn46n2nHDy/vykA0C3jxlQC+cluKym2wrsebEst6PcX7qSjC1/E8GLbyt8
+         MPhdVcCtAgnWc+L/CSN7lFYBzrRiAKah3WUTbXYwsOtbMvZd5E1pTVAxY6krBkXrYzoP
+         t7yTqEO1wZVpaSIZeE3P7kwMSsw7PF8ZITVBdfrh1Nd09hWmkLqJULtArIeEhlbo2qlX
+         btc/Eu0SiFADqB+9wTbWFoeX1+y+u440flLcPVdw40T+sUowUln1OFuFez6viAJ/FyYv
+         TXMA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@googlemail.com header.s=20161025 header.b=iKt0aJwb;
+       spf=pass (google.com: best guess record for domain of postmaster@mail-sor-f65.google.com designates 209.85.220.65 as permitted sender) smtp.helo=mail-sor-f65.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=googlemail.com
+Return-Path: <>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id y16sor3470322ljy.47.2020.03.09.11.30.43
+        for <ntumacder@murdockmartell.com>
+        (Google Transport Security);
+        Mon, 09 Mar 2020 11:30:43 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of postmaster@mail-sor-f65.google.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@googlemail.com header.s=20161025 header.b=iKt0aJwb;
+       spf=pass (google.com: best guess record for domain of postmaster@mail-sor-f65.google.com designates 209.85.220.65 as permitted sender) smtp.helo=mail-sor-f65.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=googlemail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=to:auto-submitted:message-id:date:from:subject:references
+         :in-reply-to;
+        bh=Q767YuH+bRAP4/I9u1kHH6SdpnzQj6h3h6mg/so9+Yg=;
+        b=iKt0aJwbis9rxOtkhaz8A/OBKgnIxtp7nq1oZLj+XUIaButBWhwLazxBTcOZLMWeIu
+         7ULVV3/o3nU47c9ACROPlB+DmBHGqfKQ3fldeaB6SlHBNyTRj5tE2KdcXzuBMdJ8DYra
+         yIpHrxB7Di9q0MR56bVXID5pWyS+J0yE1R3vz/2WITjQk8K3Ezc47bDTmuFkv5Egoqs+
+         KSJ90CvmEyg/gMvd3NrY4FtLYz53pMO0fYgWZ5oYLO98+tT36XSQEDH41I8uqBuyX+4j
+         uFg74N5G0rhcPQbL7pAZhpY5d+KyTG6DQEhKr1M5CczTGsgVPKLzvFh8cP05PCALTVar
+         iq/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:to:auto-submitted:message-id:date:from:subject
+         :references:in-reply-to;
+        bh=Q767YuH+bRAP4/I9u1kHH6SdpnzQj6h3h6mg/so9+Yg=;
+        b=THeq5DeG60C3lx3sQ7cTnSYsASEwQgB7vxMgLEhU1wlzmslgSpQ5eJsQK84DJZbuBf
+         z9U2zTBmXEwH/57rfRWx8D+dDh+bOSkCqxyoKWDgjdboNHLA5bI1lzcWODoEgTRULmdQ
+         s5wy5Rhl55RkgGOPmbcHz6+Y5M86ztbkT7ighg01E+Arg6pOjZt7XGnhRZ/q4mrg0g/f
+         K0Y0ZruRLpL94m5x0QAQyMrEhDp8hKuGNWkOnbS4p5kf0cnsSL3bgLFmWwgbvXgQt0vP
+         Tcoy/UwyRpPycmWa8dSCoTI9aQ2dAMDJ0N64n6VR6lcxf/Jby7udCq8soAoy6z6HbNZA
+         s30A==
+X-Gm-Message-State: ANhLgQ0eK30sfF2A+BTvM+keYi4vHZ0OxafV4waiHz64YlUrt1GbN7jF
+	FviY1WJ0nJ59x0evLoldFy6CHnJqDX/yYrzh6aaaTQ==
+X-Google-Smtp-Source: ADFU+vvQM7l/YtDyJPF1UsRS9gEbrBxAFzIrpwWhCJ/vhAlk1OoySsyQByaV8B226uPGkuo2XIQHW91j/5nSxKgQio3DE695jauKcpc=
+X-Received: by 2002:a2e:8597:: with SMTP id b23mr10531391lji.181.1583778643384;
+        Mon, 09 Mar 2020 11:30:43 -0700 (PDT)
+Content-Type: multipart/report; boundary="00000000000071159905a070330f"; report-type=delivery-status
+To: ntumacder@murdockmartell.com
+Received: by 2002:a2e:8597:: with SMTP id b23mr7054379lji.181; Mon, 09 Mar
+ 2020 11:30:43 -0700 (PDT)
+Return-Path: <>
+Auto-Submitted: auto-replied
+Message-ID: <5e668b53.1c69fb81.46c4a.650a.GMR@mx.google.com>
+Date: Mon, 09 Mar 2020 11:30:43 -0700 (PDT)
+From: Mail Delivery Subsystem <mailer-daemon@googlemail.com>
+Subject: Delivery Status Notification (Failure)
+References: <CAHuCV-0_nWFNPiXe32EMuRYY7pr8nSs5NimMUFsR86YMQSyBCg@mail.gmail.com>
+In-Reply-To: <CAHuCV-0_nWFNPiXe32EMuRYY7pr8nSs5NimMUFsR86YMQSyBCg@mail.gmail.com>
+X-Failed-Recipients: tatyana_bondarenko@bio-rad.com
+
+--00000000000071159905a070330f
+Content-Type: multipart/related; boundary="0000000000007115cd05a0703310"
+
+--0000000000007115cd05a0703310
+Content-Type: multipart/alternative; boundary="0000000000007115d105a0703311"
+
+--0000000000007115d105a0703311
+Content-Type: text/plain; charset="UTF-8"
+
+
+** Address not found **
+
+Your message wasn't delivered to tatyana_bondarenko@bio-rad.com because the address couldn't be found, or is unable to receive mail.
+
+Learn more here: https://support.google.com/mail/answer/6596
+
+The response was:
+
+The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. Learn more at https://support.google.com/mail/answer/6596
+
+--0000000000007115d105a0703311
+Content-Type: text/html; charset="UTF-8"
+
+
+<html>
+<head>
+<style>
+* {
+font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" class="email-wrapper" style="padding-top:32px;background-color:#ffffff;"><tbody>
+<tr><td>
+<table cellpadding=0 cellspacing=0><tbody>
+<tr><td style="max-width:560px;padding:24px 24px 32px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:2px">
+<img style="padding:0 24px 16px 0;float:left" width=72 height=72 alt="Error Icon" src="cid:icon.png">
+<table style="min-width:272px;padding-top:8px"><tbody>
+<tr><td><h2 style="font-size:20px;color:#212121;font-weight:bold;margin:0">
+Address not found
+</h2></td></tr>
+<tr><td style="padding-top:20px;color:#757575;font-size:16px;font-weight:normal;text-align:left">
+Your message wasn't delivered to <a style='color:#212121;text-decoration:none'><b>tatyana_bondarenko@bio-rad.com</b></a> because the address couldn't be found, or is unable to receive mail.
+</td></tr>
+<tr><td style="padding-top:24px;color:#4285F4;font-size:14px;font-weight:bold;text-align:left">
+<a style="text-decoration:none" href="https://support.google.com/mail/answer/6596">LEARN MORE</a>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr style="border:none;background-color:#fff;font-size:12.8px;width:90%">
+<td align="left" style="padding:48px 10px">
+The response was:<br/>
+<p style="font-family:monospace">
+The email account that you tried to reach does not exist. Please try double-checking the recipient&#39;s email address for typos or unnecessary spaces. Learn more at https://support.google.com/mail/answer/6596
+</p>
+</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+
+--0000000000007115d105a0703311--
+--0000000000007115cd05a0703310
+Content-Type: image/png; name="icon.png"
+Content-Disposition: attachment; filename="icon.png"
+Content-Transfer-Encoding: base64
+Content-ID: <icon.png>
+
+iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA
+GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABTdJREFUeNrsnD9sFEcUh5+PRMqZ
+yA0SPhAUQAQFUkyTgiBASARo6QApqVIkfdxGFJFSgGhJAUIiBaQB0ZIOKVCkwUgURjIg2fxL4kS+
+YDvkbC/388bi8N16Z4/d7J/5PsniuD3fyePP772ZeTsDQRAYQL/UGAJAIEAgQCBAIAAEAgQCBAIE
+AkAgyJT3Mv+Eq7vYK8mTE+MDRCAghQECAeRQA5V2ZOpmg5vDx3NPzRbmGRMEcmTrEbNNB8zWfRD+
+f/Efs2e3zCZvMjaksBg27TfbcuSNPEKP9ZyuAQKtHX2O9ncNgWC57umMPKvRNb0GEKgnLoUyxTQC
+rcns0/6uIRAs8/hGf9cQCJZpTpjdO2f25/03z+mxntM1eLtsZAgiUtX4JcaBCAQIBAgECARQ8CJa
+G5jab4J4pm4WZmO3OALVh802fIwcLkyPkcKAGggAgQCBAIEAgQCBABAIEAjKA/1AnahhbO5FdOOY
+VsrrDbPBYcYKgf5D2wLaV3p+22xh1u17tO3S+DTcvxvagUDeivPgx/a/95J/73w7Sj26Hn4pKo2M
+ehuV/KyBJM6d0f7k6RKx/R63vvL2tmf/ItDdM2ZTP6f7nkp9Y2fDx1v9akmpIU+KSCLVUghUQfSL
+zVKeTklbLxGoctw/nzC5rw8L5KRNbkpnKq6pgSqEClzNnFzY+XnYWrt6VpVk1vbwWvg+RKCKMOUw
+Q1LEOXA+/MX3mpJvGDHb265xtnzmFoUK1HaKQGlMtePYM+q2KKjXuaS1NJYIEKgI8jhEgqHt4cqy
+Ky53j3hyHz2bqSLp2o2LbJ7MxKovkGqXteoWpaOk96O9/yF/dF7NwlS36AuIQIBA5celQK4PIxBE
+4LLzrtoLgaALdSy6CJRkWQCBPGLsTHznomZ9nszUECgJ2ml3WWHe+QVFNPSQx6UdZNtxr9pbEShN
+eTTz8mQXHoHSlke7+Z+c9m6VGoHSkEfs/trLW3wQKApN1V3lGfnGu2Z6BFoLtYCs3GWBPAiUCLVh
+/HoaeRCoT9R873KLM/IgUBfapnCpe5AHgXry4pf412ihEHkQqCdxd5VqrcezhUIESsJMTJ+Pdthp
+Z0WgyNlXXPHc2Mc4IVAELl2Gnh8mhUDvCkfbIVAkcbf/aOoO3fMKhqAD3frTa4quwpn0hUDOkQhI
+YYBAgECAQAAU0QlYObl+5Ug8NcprZkZxjUCxRPVA6zmtEXHCBykskrhjgHXN09PoEcgFl4M4H11j
+nBAoApcj6ZoPGScEAgTKApcDoTw5sgWB+sGlz1n90IBAPdE6j1o21PfcC11jLagL1oFWRyGlKU3p
+OxcSJQ7NZAjkhHp/uG2HFAYIBAgECASAQIBAgECAQAAIBOkxEARBtp9wdVfAMOfIifEBIhCQwgCB
+ABAI0oV2jhxZ+nfBatuPZfgBCy0Eqqo8c01b+uu51XZvzOgDWoHNTGR+pCwpLEd5svuAZXlO2uEr
+PyEQ8hRWHgRCHmqg0sjTnLalv6crJQ8C/U8stqNO0I4+VZOHFIY8COS1PGL2ybd5yUMKK7s8zYmL
+dujyd3n+nESgcsvzZd4/KwIhDwIhT35QA6UyE1qyxZnfvJMHgdKS549JC1qvvJOHFIY8CFR5eV5O
+XimqPAhUdHnmfx+zgxdOFXkoqIGKKs/cswnb/8Oeog8HEai48nxUhiFBIORBIOShBioskkbySCLk
+IQIhDwIhj28p7FApR6b1qlEbHGpkO/rr6215vi/zH1r2x7tApSGFAQIBAgECAQIBIBAgECAQIBBA
+LK8FGADCTxYrr+EVJgAAAABJRU5ErkJggg==
+--0000000000007115cd05a0703310--
+--00000000000071159905a070330f
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; googlemail.com
+Received-From-MTA: dns; ntumacder@murdockmartell.com
+Arrival-Date: Mon, 09 Mar 2020 11:30:42 -0700 (PDT)
+X-Original-Message-ID: <CAHuCV-0_nWFNPiXe32EMuRYY7pr8nSs5NimMUFsR86YMQSyBCg@mail.gmail.com>
+
+Final-Recipient: rfc822; tatyana_bondarenko@bio-rad.com
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: smtp; The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. Learn more at https://support.google.com/mail/answer/6596
+Last-Attempt-Date: Mon, 09 Mar 2020 11:30:43 -0700 (PDT)
+
+--00000000000071159905a070330f
+Content-Type: message/rfc822
+
+X-Received: by 2002:a2e:8597:: with SMTP id b23mr10531375lji.181.1583778642866;
+        Mon, 09 Mar 2020 11:30:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1583778642; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hOQ4/IQ1I7W7yM0DnJ0izSxLI/Qe4M8CvR5xNlPJDR7CfET+LfoUP8I8Y3lu1qffJE
+         6lmwQF2VKKjFjKlJltV7njx3J4fXSo6YpeSKTG5Bf2vpGH9KdgWrNQ2rVukHdycdDIPa
+         PZsJUJD6u3HxOpHKNLU5yXGDPLm6e8GIixFeEh4NADcLcBUZNExzWf6qN/Dk12VNkypu
+         RWcFwhI4flDnLnUoo2BPC6YkkvdHbP19Mcxdf5sokptAb+MyOg0kT2Ggm20tHS78ZCwl
+         oGhD7hnxaMene5c7gvpsr+v2Pq+OYkx0s7DyAPQulLIlROEzHpmHb1dt9BuaCU5tlFEe
+         o8QA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:mime-version:from:dkim-signature;
+        bh=/ZzgRSL9o+uRHLPmdOhrklMz04fBw5ED/hBmryMOZkM=;
+        b=xDZfF1PMIvDyxflyQ5wb6k4SDc9rv9jmRCrl25dtQhMrfs25nLkPpZvXin84CRLglj
+         LYT76k0NB13YCsz9QbdyjSwzSOuh1ysB3ZK3oPsefOpoSFYYlxhNzsdS4q2BFFG76dXY
+         JpatwhqbRVWdqe6pc4k23cplLWeT/ktF1VG9PGGEsQ9ROlPsYfIdWXMhfvGI+G6ukP2J
+         I3NpvFPs834+QKSPz/1/f65uW0fQLZjBv0DpZOOmNeyQ5zJSL2BO4YZDz9wZzDJaUzEg
+         iYOIvIbZIxy6E5m32He4q1Bn9pbjM9eP46DGg7pPQc8zFmdjjOLWnVsTCaWH7r1z+Clc
+         OuXw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@murdockmartell-com.20150623.gappssmtp.com header.s=20150623 header.b=mC9OjrlU;
+       spf=neutral (google.com: 209.85.220.65 is neither permitted nor denied by best guess record for domain of ntumacder@murdockmartell.com) smtp.mailfrom=ntumacder@murdockmartell.com
+Return-Path: <ntumacder@murdockmartell.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id v2sor4019527ljj.29.2020.03.09.11.30.42
+        for <tatyana_bondarenko@bio-rad.com>
+        (Google Transport Security);
+        Mon, 09 Mar 2020 11:30:42 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.65 is neither permitted nor denied by best guess record for domain of ntumacder@murdockmartell.com) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@murdockmartell-com.20150623.gappssmtp.com header.s=20150623 header.b=mC9OjrlU;
+       spf=neutral (google.com: 209.85.220.65 is neither permitted nor denied by best guess record for domain of ntumacder@murdockmartell.com) smtp.mailfrom=ntumacder@murdockmartell.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=murdockmartell-com.20150623.gappssmtp.com; s=20150623;
+        h=from:mime-version:date:message-id:subject:to;
+        bh=/ZzgRSL9o+uRHLPmdOhrklMz04fBw5ED/hBmryMOZkM=;
+        b=mC9OjrlU91Ak5qZ11QCQNrWivWcKRn6vpqGyIkXLFmj+4kc5PACPzStnOguvlhi5VC
+         bm91DMt7ClAwJv2yr+Bl+gqibgUKiWTHWw2laSGPdhQpHcWu+8jWztwNuHYgBt9KoySQ
+         uNqT3v4Kljl1RGC70ijllVlx/HNAAvfQwfuRiXUBhHcG5gAv4ezDOEP0vZ5WrHKNYOhL
+         fQPHSwChGEJG8oktP4SQPOWyX09Fw2RrYfRnMLizUog1BTvK9r1619HL7PBSdOef/Rty
+         INoJ6QzjrclMWwZNeNmA2CRZdVjuGr1vyVrcR6FGVEEbxWmRU7YCpy3aDccSe33F/Ejq
+         S7dA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:mime-version:date:message-id:subject:to;
+        bh=/ZzgRSL9o+uRHLPmdOhrklMz04fBw5ED/hBmryMOZkM=;
+        b=s2CzDdP/cEYg2CTtyG9VbkIV0DtkB9U4UxEMVOha6o77+rsBNAStrE41ILBCE4HIvE
+         +FANktJkjIhrT//Mdz5TYBZIk+Y0PPBE5nqDudtIGRY6vBgw9BKbKpzMetQuLCA46Ug1
+         3Pa71uyvY7nGUxUzVpnJv4PP8EqbgtrANDufQ/zsgPD1hfkiaOdZQx18WefT/8+kpYpn
+         0NSr/OupOmvo66k3mnxqpoSGAUJa/k3a4aMOYJRk8MJ97C5cWJsI8IEIeLI44GZnkdcS
+         nPGl3pqTu5QaV7lD4R9JZCoBKoTomAblGbuLqOHq2HBTaCZG9GVTdvkBHr2O5FOMoFgA
+         Ns2g==
+X-Gm-Message-State: ANhLgQ0Go+RQ4UeRXZbY9BWti2jJrq1GA2k+Vq29zL0iMSl+Bkl6Ba38
+	61rhbLZ5rFQx724ZwaM+a2ypoWpsTwSIucAK/oDTOx1VBKg=
+X-Google-Smtp-Source: ADFU+vuFt7QePdNI3Pjyo24hS46vqCcNM08tQrf0mz8r+/72hNOmUHp4WJvBX3Qr6NkZ1Lo3em7aCiH5i4sZUBf8ais=
+X-Received: by 2002:a2e:8112:: with SMTP id d18mr9908206ljg.137.1583778642559;
+ Mon, 09 Mar 2020 11:30:42 -0700 (PDT)
+Received: from 360097892466 named unknown by gmailapi.google.com with
+ HTTPREST; Mon, 9 Mar 2020 11:30:42 -0700
+From: Nancy Tumacder <ntumacder@murdockmartell.com>
+MIME-Version: 1.0
+Date: Mon, 9 Mar 2020 11:30:42 -0700
+Message-ID: <CAHuCV-0_nWFNPiXe32EMuRYY7pr8nSs5NimMUFsR86YMQSyBCg@mail.gmail.com>
+Subject: Sr. Accountant - Working for Start-ups with Work/Life Balance!
+To: Tatyana Bondarenko <zorilane.stone@gmail.com>, 
+	Tatyana Bondarenko <tanya_bondarenko@yahoo.com>, 
+	Tatyana Bondarenko <tatyana_bondarenko@bio-rad.com>
+Content-Type: multipart/alternative; boundary="000000000000648dc805a070336d"
+
+--000000000000648dc805a070336d
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Tatyana,
+
+I reviewed your linkedIn profile and recent experience at Penumbra,
+Inc. and feel you would be an excellent fit at Murdock Martell. We are a
+well established financial consulting firm providing solutions to
+established and emerging growth companies in the Bay Area with a focus on
+Life Sciences and Technology Companies. MM consultants enjoy competitive
+salary, benefits, paid training and professional development, bonus
+potential and flexible hours with excellent work/life balance!
+
+I would be very interested in scheduling a call to see if this aligns with
+your career goals. Let me know your availability the next few business days
+for a time to chat.
+
+Nancy Tumacder
+Murdock Martell | Your Chief Financial Resource
+ntumacder@murdockmartell.com
+<https://message-cb.findem.ai/t?i=5e667973be6a28382e7b47a8&u=mailto%3Antumacder%40murdockmartell.com>
+(312) 543-5339 www.murdockmartell.com
+<https://message-cb.findem.ai/t?i=5e667973be6a28382e7b47a8&u=https%3A%2F%2Fwww.murdockmartell.com%2F>
+
+--000000000000648dc805a070336d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<p><span>Hi Tatyana,</span></p><p><span>I reviewed your linkedIn profile an=
+d recent experience at Penumbra, Inc.=C2=A0and feel you would be an excelle=
+nt fit at Murdock Martell. We are a well established financial consulting f=
+irm providing solutions to established and emerging growth companies in the=
+ Bay Area with a focus on Life Sciences and Technology Companies. MM consul=
+tants enjoy competitive salary, benefits, paid training and professional de=
+velopment, bonus potential and flexible hours with excellent work/life bala=
+nce!</span></p><p><span>I would be very interested in scheduling a call to =
+see if this aligns with your career goals. Let me know your availability th=
+e next few business days for a time to chat.</span></p><p><span>Nancy Tumac=
+der<br>Murdock Martell | Your Chief Financial Resource<br><a href=3D"https:=
+//message-cb.findem.ai/t?i=3D5e667973be6a28382e7b47a8&amp;u=3Dmailto%3Antum=
+acder%40murdockmartell.com">ntumacder@murdockmartell.com</a><br>(312) 543-5=
+339=C2=A0<a href=3D"https://message-cb.findem.ai/t?i=3D5e667973be6a28382e7b=
+47a8&amp;u=3Dhttps%3A%2F%2Fwww.murdockmartell.com%2F">www.murdockmartell.co=
+m</a></span></p><img src=3D"https://message-cb.findem.ai/t?i=3D5e667973be6a=
+28382e7b47a8">
+
+--000000000000648dc805a070336d--
+
+--00000000000071159905a070330f--
+
