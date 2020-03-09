@@ -1,0 +1,266 @@
+Delivered-To: koushik.ghosh@gmail.com
+Received: by 2002:a25:ce89:0:0:0:0:0 with SMTP id x131csp10201193ybe;
+        Mon, 9 Mar 2020 12:38:27 -0700 (PDT)
+X-Google-Smtp-Source: ADFU+vsHgTfcdjU2XtfKFFM/TR/pYBKSDMlE3Kn3mZbNxK6F+bZxpxxyIZ5TTKQ+KDd65M5U4aWP
+X-Received: by 2002:a37:8e45:: with SMTP id q66mr16788776qkd.129.1583782707678;
+        Mon, 09 Mar 2020 12:38:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1583782707; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rzSx2Tjql3QjYwC7StoWjbD/O/sgBuXFeHZARkG0QSdaE9SQRdT9x8mSiLDhFPw+C7
+         Ex/+pxCFtacsMNNr/CvRhIKFfMB6EfhfbaZCFzHCqwQUeDMOsnNKOXtZ4PZg3NlQZjgO
+         cTNwezw3SGEz+t0zGvk2Sd+lLIjQ0wkfY1YfwoDht3Hm0SxWw557d4vBAwUXnmFPajVr
+         4UO79WciAiVYgpOFJTrpCbejcVowNNxKjnADfpdNvjvK29//d98d96wTEwYe3GFY94xZ
+         6vLH8jaVCvO9/D5Lyl27JV3g9QmkjD0rHzrXN09CqGYoHMya42JOyUhToCYTJLhvhCnd
+         vFIQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:mime-version:auto-submitted:to:subject:from:date
+         :ironport-sdr:dkim-signature;
+        bh=Yz6yPIlsx645QiMckS9J415SQVf9nVgg5U2PaGpMg7c=;
+        b=c8TsMV6Ncx4JT1m3K8KjTlI5XdCBGQY38ld7UAZw8wCSMduNXve3JsE9IyTHquP3Ar
+         XAjwqGPDt1/unaS74HTnEW5Ll5AT5TvVptwqfgYX66iHkFkbW5IbCYALKH28RbncDDT1
+         5MluwlXj72VS7Jy1p/tte5pNHYQ3eifcwSPJgfBY1Sz8z3BvGlQqjq/gFClChf3IRr4/
+         Ch17uPv9VTyY2AUQoc7GrmutuCAUTgx8Wj8gBroEO8G4+BZguvgdhnOHYatCq3aSovE6
+         VsGKqXI/Zp3Ug++Tsu4brdwGrK1fyXBmv0qrLdlVvTC5Oc3lThrsbxukzM2/YDZFM/yq
+         sH5Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@amazon.com header.s=amazon201209 header.b=P+Fsl9Kk;
+       spf=pass (google.com: best guess record for domain of postmaster@smtp-fw-6001.amazon.com designates 52.95.48.154 as permitted sender) smtp.helo=smtp-fw-6001.amazon.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.com
+Return-Path: <>
+Received: from smtp-fw-6001.amazon.com (smtp-fw-6001.amazon.com. [52.95.48.154])
+        by mx.google.com with ESMTPS id q12si6336055qki.261.2020.03.09.12.38.27
+        for <koushik.ghosh@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Mar 2020 12:38:27 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of postmaster@smtp-fw-6001.amazon.com designates 52.95.48.154 as permitted sender) client-ip=52.95.48.154;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@amazon.com header.s=amazon201209 header.b=P+Fsl9Kk;
+       spf=pass (google.com: best guess record for domain of postmaster@smtp-fw-6001.amazon.com designates 52.95.48.154 as permitted sender) smtp.helo=smtp-fw-6001.amazon.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+  t=1583782707; x=1615318707;
+  h=date:from:subject:to:mime-version:message-id;
+  bh=Yz6yPIlsx645QiMckS9J415SQVf9nVgg5U2PaGpMg7c=;
+  b=P+Fsl9KkbHNDGh2Uq0jx/UmdcnHG/6yXKXOal/BPq/MaH5RfikalRgvy
+   hhSvebq+O/uARpyZLkS5WXNyb3rD49R3pVn5rZYZlW7QVANFv11xowjng
+   aDbgGWKeI47hqHhGzS2XpJCycPTsI0w9McytCb3b4CKRubntMc8JRMl3Y
+   E=;
+IronPort-SDR: I+qMq7qB3I2Ps/+bSxg1OknUR0XYiRYS1JFOQysN1u9AhHLoC11WegL/UEUrp7vNEUkwkQtPO8
+ JUM0K7M1c7DA==
+X-IronPort-AV: E=Sophos;i="5.70,534,1574121600"; 
+   d="scan'208,217";a="21732155"
+Received: from iad12-co-svc-p1-lb1-vlan3.amazon.com (HELO email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com) ([10.43.8.6])
+  by smtp-border-fw-out-6001.iad6.amazon.com with ESMTP; 09 Mar 2020 19:38:27 +0000
+Received: by email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com (Postfix)
+	id 77F94A1D10; Mon,  9 Mar 2020 19:38:27 +0000 (UTC)
+Date: Mon,  9 Mar 2020 19:38:27 +0000 (UTC)
+From: MAILER-DAEMON@amazon.com (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: koushik.ghosh@gmail.com
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="5037CA06A4.1583782707/email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com"
+Message-Id: <20200309193827.77F94A1D10@email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com>
+
+This is a MIME-encapsulated message.
+
+--5037CA06A4.1583782707/email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<shankaro@amazon.com>: unknown user: "shankaro"
+
+--5037CA06A4.1583782707/email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com
+X-Postfix-Queue-ID: 5037CA06A4
+X-Postfix-Sender: rfc822; koushik.ghosh@gmail.com
+Arrival-Date: Mon,  9 Mar 2020 19:38:27 +0000 (UTC)
+
+Final-Recipient: rfc822; shankaro@amazon.com
+Original-Recipient: rfc822;shankaro@amazon.com
+Action: failed
+Status: 5.1.1
+Diagnostic-Code: X-Postfix; unknown user: "shankaro"
+
+--5037CA06A4.1583782707/email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Return-Path: <koushik.ghosh@gmail.com>
+Received: from EX13MTAUWA001.ant.amazon.com (iad55-ws-svc-p15-lb9-vlan3.iad.amazon.com [10.40.159.166])
+	by email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com (Postfix) with ESMTPS id 5037CA06A4
+	for <shankaro@amazon.com>; Mon,  9 Mar 2020 19:38:27 +0000 (UTC)
+X-CrossPremisesHeadersFilteredBySendConnector: EX13MTAUWA001.ant.amazon.com
+Received: from EX13D31UWA004.ant.amazon.com (10.43.160.217) by
+ EX13MTAUWA001.ant.amazon.com (10.43.160.58) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Mon, 9 Mar 2020 19:38:26 +0000
+Received: from EX13MTAUWA001.ant.amazon.com (10.43.160.58) by
+ EX13D31UWA004.ant.amazon.com (10.43.160.217) with Microsoft SMTP Server (TLS)
+ id 15.0.1497.2; Mon, 9 Mar 2020 19:38:26 +0000
+Received: from fireeye-62005.amazon.com (10.43.244.15) by
+ mail-relay.amazon.com (10.43.160.118) with Microsoft SMTP Server (TLS) id
+ 15.0.1367.3 via Frontend Transport; Mon, 9 Mar 2020 19:38:26 +0000
+Received: by fireeye-62005.amazon.com (Postfix, from userid 600)
+	id 48bpRj0Gs0zbTK3; Mon,  9 Mar 2020 19:38:09 +0000 (UTC)
+Received: from smtp-border-fw-9103.sea19.amazon.com (smtp-border-fw-9103.sea19.amazon.com [10.185.147.27])
+	by fireeye-62005.amazon.com (Postfix) with ESMTP id 48bpRN4JVTzbTLN
+	for <shankaro@amazon.com>; Mon,  9 Mar 2020 19:38:08 +0000 (UTC)
+Received-SPF: None (smtp-fw-9103.amazon.com: no sender
+  authenticity information available from domain of
+  koushik.ghosh@gmail.com) identity=pra;
+  client-ip=209.85.161.53; receiver=smtp-fw-9103.amazon.com;
+  envelope-from="koushik.ghosh@gmail.com";
+  x-sender="koushik.ghosh@gmail.com";
+  x-conformance=sidf_compatible
+Received-SPF: Pass (smtp-fw-9103.amazon.com: domain of
+  koushik.ghosh@gmail.com designates 209.85.161.53 as permitted
+  sender) identity=mailfrom; client-ip=209.85.161.53;
+  receiver=smtp-fw-9103.amazon.com;
+  envelope-from="koushik.ghosh@gmail.com";
+  x-sender="koushik.ghosh@gmail.com";
+  x-conformance=sidf_compatible; x-record-type="v=spf1";
+  x-record-text="v=spf1 ip4:35.190.247.0/24 ip4:64.233.160.0/19
+  ip4:66.102.0.0/20 ip4:66.249.80.0/20 ip4:72.14.192.0/18
+  ip4:74.125.0.0/16 ip4:108.177.8.0/21 ip4:173.194.0.0/16
+  ip4:209.85.128.0/17 ip4:216.58.192.0/19 ip4:216.239.32.0/19
+  ~all"
+Received-SPF: None (smtp-fw-9103.amazon.com: no sender
+  authenticity information available from domain of
+  postmaster@mail-yw1-f53.google.com) identity=helo;
+  client-ip=209.85.161.53; receiver=smtp-fw-9103.amazon.com;
+  envelope-from="koushik.ghosh@gmail.com";
+  x-sender="postmaster@mail-yw1-f53.google.com";
+  x-conformance=sidf_compatible
+Authentication-Results: smtp-fw-9103.amazon.com; spf=None smtp.pra=koushik.ghosh@gmail.com; spf=Pass smtp.mailfrom=koushik.ghosh@gmail.com; spf=None smtp.helo=postmaster@mail-yw1-f53.google.com; dmarc=pass (p=none dis=none) d=gmail.com
+IronPort-SDR: EwoL3tUDVwZKWknVEQhxXiw6if8HvuPhONX3Fbuwzx53Dg5OUQCQwTdu2ebhgEWgfvGzMquiKg
+ ae/v6mddkw33qq5+G90bMFwtLMfKPYDfo=
+X-Amazon-External-Envelope-Sender: koushik.ghosh@gmail.com
+X-Amazon-External-Envelope-Recipient: shankaro@amazon.com
+X-Amazon-External-Source: yes
+X-Amazon-Approved-Domain: no
+IronPort-PHdr: =?us-ascii?q?9a23=3AU4B35Rf9jKxiD5vdFc8oyAtulGMj5ufYGycvwc?=
+ =?us-ascii?q?N+1eAWNoim9o7pBkHU4u9h3hfRCIPc7f8Aw/Ldr/W5ATREqY2Z5WkfeYZFUQ?=
+ =?us-ascii?q?MEj8hS1wUsA8+AXFe/ZPfxdyJvBoAKTkJsqkL7fk1cGcL3ekHS52e/9TkIBg?=
+ =?us-ascii?q?7XOg1yKeD4XIXViovzn7nqp82OPFsQxQ/5Z7R0IU/s/yzMqskbh5djIa8tyx?=
+ =?us-ascii?q?zP50FFYPlS2XgyfAvBhBPg/oK+49syqnwL/fsk/txHV+PxeKFrBadAAmEANG?=
+ =?us-ascii?q?Y4rNbuqQGFVRGGs3gbT34WkxkODAjC9xHSUZL4sy+8ve14i2GBJcOjdbkvQn?=
+ =?us-ascii?q?y56rtzDhrhiSMJLTk8pWLQl9dwjaEdrxKmvBxXzIvdYYXTP/17LevGZd1PY2?=
+ =?us-ascii?q?1HU45KUjBZRIOxa4xaF+0aIeNRtJXwvXMLpBq6QBizXabhl2QOiXjx0qk3le?=
+ =?us-ascii?q?8mFFKO0AkpBdlbqH3Pt521LPIUVua4hKXJ1mDFaPVbmH/xvYfNexEl5/qLWO?=
+ =?us-ascii?q?sqI/DcwkQuCQ7Jy26oh9e8ZGGz0eIA+yiA6vZ4EOywzj9+81o3qz2m1MAqzI?=
+ =?us-ascii?q?LOg9BdzFeM7ih/zIsvQL/wAEdmfd6pFodRvCCGJsN3RM0lWWRhpCc9zPUPp5?=
+ =?us-ascii?q?e6eCEAzJlvyQTYbrSLdI2B4xSrU+j0Q38wh3V4Y7K+hFC98U+7ysXzU8C11B?=
+ =?us-ascii?q?BBqS8E2tjAu3YR1gDCv9CdQ6gYnA/p0jKO2gbPr+BcdBpsxOyLdth4nOd2y8?=
+ =?us-ascii?q?FA+V7OFSL3hkjs2bSTal1h9Pftur2/OfPvo5aOMIkygQb7YcFM0oSyB/o1Ng?=
+ =?us-ascii?q?8WUi2V4+O5gffg+lDiQLRJyPI2lbLZmJ/fLMUf4KW+BkUGt+Rrowb6FDqg3N?=
+ =?us-ascii?q?kCyDMEK09eeBOEyYfpPErOCP/9BPa7xV+rlX04opKOdq2kCZLLIH/Zlb7ndr?=
+ =?us-ascii?q?so8E9Qxj04ytVH7o5VALUMeaihYEL6ud3GAxN8CDSanre8Wu10zZhWGXmKHr?=
+ =?us-ascii?q?fcPryX4AbQvaQmJuCeY4lTszH4ebAp4PvnjHlxnlF4H+Hh3pwKc3C5HbJpI0?=
+ =?us-ascii?q?KCYVLjh94AFSEBuQ92QOHxiVKEWCJefD7oB/N6tmx9Udz/S9qYDom2yKSMxi?=
+ =?us-ascii?q?K6AoFbagUkQhiXHHHkep/FE/YAZSSOI9NwxzkNVLyvUYgkhlmlsA73zaYiL/?=
+ =?us-ascii?q?KBoHVJ88K+koErvquOzkJXl3Q8FcmW3mCTQnshhWYUX3o4w+Uu+BQmjF6G2L?=
+ =?us-ascii?q?p/hbpTEtkAgpEBGgo8K5PYyPR3Tt7oXQeUNNSOVU2mQ9bgDjE2VdIZzNoHYk?=
+ =?us-ascii?q?I7ENKnxEOmvWLiE/oOmrqHCYZhuKHbwmPxJsU7xHbBz6kJgFwvQ88JPmqjzP?=
+ =?us-ascii?q?0alUCbF8vClEOXkLyvfKIX0XvW9WuN+mGJuVlRTA96VaiWFWBafEbdqs71o1?=
+ =?us-ascii?q?/TV7L7Q6pyKRNPkITRT8kCIs2sl1hNQ+3vfcjTc37k0XnlHg6Gn/uNdNa4ID?=
+ =?us-ascii?q?hbhXSFThJYzEZLuizafQkmWnX//ySEV2coTAy3JRurqLgbyjvzT1donV/UKR?=
+ =?us-ascii?q?Q5jfztvEZS36TUSutPjOxa/n19+nMkRBDlmIiOQ9uY+1g+JuMFPZVksQ0BjS?=
+ =?us-ascii?q?WA52kfdtShN/ww2QJYKl4q+Ruoj1IuVM1BiZR49St6ilMtduTIlgsGLWrQ3I?=
+ =?us-ascii?q?isaOSIcS+rrUzpM+iOnQiAtbTesqYXtKZi8wSl7FzvTxBytS0gioYd0mPAtM?=
+ =?us-ascii?q?+TUkxPAdSoAxxxr18j9vnbenVvvdqKkyc3YO/v6HmanIt4YYltggCpe9MVaf?=
+ =?us-ascii?q?nWLgL5HswECsTrE9QEwAP3PDQDOu0atLUxI9vjeeTDiffzZ6BpmTu0imIB64?=
+ =?us-ascii?q?d4gAqK8GJnR+jE0oxgobnQ1xabVzr6kFaqs9zm0YFCazYIG2OjyC/iTIdPb6?=
+ =?us-ascii?q?x2dIwPBC+gOcqyjtl5gpfsXTZf+jvBTxse39S1fBOJc1Hn9QhZ1EBSsGP+3C?=
+ =?us-ascii?q?XllHp7lDYmqqfZ1yvLgqzjeBcBJm9XVTxigFPrcu3Wx5gRWEmlaRRslQPwvx?=
+ =?us-ascii?q?6rgfgG4v0hdi+OGhQAZSX9ImB8X7Hlrb+ee4tB99Z56H0MFu25aEKdTPj2pB?=
+ =?us-ascii?q?5JtkGrV2ZY2j0/cCmn/5vjmBkvwmGaMW1zrXmfdsF33hf369nVRPoX1T0DDn?=
+ =?us-ascii?q?od63GfFh2nMt+l8M/B3Y/Eqfy7Xnm9W4d7dCDqycaRq3L+6zAxRxK4mP+3l5?=
+ =?us-ascii?q?vsFg1wgkqZn5F6EC7Pqhj7eIzi0a+3ZPlmckdfD1j588NmG4t6n9Js1qFV4m?=
+ =?us-ascii?q?ATg9CuxVRCiX36aIwJ1qf3bX5LTjkOkYaMvVrVnXZ7J3fM/LrXE3WQxsw7Oo?=
+ =?us-ascii?q?u/a2ISnzMitoVEVfzS47tDki945FG/qFCJOKkvrnIm0fIrrUUiraQMsQspwD?=
+ =?us-ascii?q?+aB+lLT0ZdNC3o0R+P6oLnoQ=3D=3D?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0FNCQBdmmZehzWhVdFlhGWBaQQLKoQ?=
+ =?us-ascii?q?VgRyCXosLgluDVIVWdYUFBQeDOYd5EgkRBSoEAQEChlIcBwEERwIDAQELAQE?=
+ =?us-ascii?q?FAQEBAgECAwQCAhABAQEIDQkIKYVdDINTcQEBAQEBAQEBAQEBAQEBAQEBAQE?=
+ =?us-ascii?q?BFQKBASk4ER0BGx4DEggBAgU3AiQBEQEFARYEPYMEgkoBAy6aPIEoAXSBBD2?=
+ =?us-ascii?q?LKIEVBQEXgwAFgguCNQoZJw1iA4EyAgcSiHCEYg+BTD+BR4JegT2DHnuCRIJ?=
+ =?us-ascii?q?eBIVYkk6XfgeCP3gElWocgjkBjEWMMAaETIVNDDKgCQ8jg0EzGiOBAYI7UBg?=
+ =?us-ascii?q?NjjeDWYp1JDCPDgEB?=
+X-IPAS-Result: =?us-ascii?q?A0FNCQBdmmZehzWhVdFlhGWBaQQLKoQVgRyCXosLgluDV?=
+ =?us-ascii?q?IVWdYUFBQeDOYd5EgkRBSoEAQEChlIcBwEERwIDAQELAQEFAQEBAgECAwQCA?=
+ =?us-ascii?q?hABAQEIDQkIKYVdDINTcQEBAQEBAQEBAQEBAQEBAQEBAQEBFQKBASk4ER0BG?=
+ =?us-ascii?q?x4DEggBAgU3AiQBEQEFARYEPYMEgkoBAy6aPIEoAXSBBD2LKIEVBQEXgwAFg?=
+ =?us-ascii?q?guCNQoZJw1iA4EyAgcSiHCEYg+BTD+BR4JegT2DHnuCRIJeBIVYkk6XfgeCP?=
+ =?us-ascii?q?3gElWocgjkBjEWMMAaETIVNDDKgCQ8jg0EzGiOBAYI7UBgNjjeDWYp1JDCPD?=
+ =?us-ascii?q?gEB?=
+X-IronPort-AV: E=Sophos;i="5.70,534,1574121600"; 
+   d="scan'208,217";a="710352747"
+Received: from mail-yw1-f53.google.com ([209.85.161.53])
+  by smtp-fw-9103.amazon.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 09 Mar 2020 19:38:03 +0000
+Received: by mail-yw1-f53.google.com with SMTP id p69so11313628ywh.10
+        for <shankaro@amazon.com>; Mon, 09 Mar 2020 12:38:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=5JzwrrB5X2jMZFSEhWor0lgb7wQ2u7PlR+3HmB+vZ+4=;
+        b=JVn/Am6BeKG2ulSv9O/ZGgYwuFtL+wpl2yykKbLc55jsvOuvhhNtXQm8jbBVLX4ySz
+         uKZqqJ2IDSynSHdrPU76eEme1E4aESV/ihH5yfpZn8iOtAiqtxzNSFhptxjZqsaKtr98
+         uaACAuyhZM7BjwqJiV2zORpNdzibX2IdYDXgSPhKXsyxUooqxNOZvC/T9nIso3G0fDxy
+         4d7+w2Eo0dnG7/iTsg6Mg0BINUMMAnJPnGI2Wuecq7cM2GezHhpfHpEsmi7SlxYLC1ru
+         8p01d5INN7O+610X/V+Chn0H0vF+DooQC/nj/Qvr4e9+5W1rJefF1E8RrCkc/TSvPw/w
+         2gCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=5JzwrrB5X2jMZFSEhWor0lgb7wQ2u7PlR+3HmB+vZ+4=;
+        b=tMK94VKjwHJGUOUU5PdbJjIwq2Deu8aQ1sNfgVXmfa5fAwOW0nd7l7ZeBkpnKAafrN
+         FV7+gGemtv+czlCQLAO3zOD9QTcLp8YVv0Xf7oUyz0lTm1Jm7e1Z741qblE2yJpdVFB8
+         KLP00h8bfhQQPl9+1/+evZHLGRRM1TyqXlFcwRNalId8nzqciYtuZWhSwGZK08prW7CS
+         Q1yrZzwE5dXwgIH8t35auaecAbWJvmRgK9czFSmqBJKC4kqWCCDF3LrtERHRymV2Y8SB
+         WZmyQw8PFLoQvsN2IFHKraQ2YCpTmMPRGuq56BZNR4JzZb+RYs5BYgUCDMxpFhlMn1Fc
+         Xk4w==
+X-Gm-Message-State: ANhLgQ1yJFViEKBjuwhQxPoDw5WrcrCEjb1cetV1w6R0NtJFqkRZxmcS
+	e6CBiRYuNXw2LBqKVPsW1jFnP7ffuMO3tWPYGyxIpKzz
+X-Google-Smtp-Source: ADFU+vuSTgXPYCQLl2oOlNSCMcnVFH2rMDpTngOa3EkagKMXJh7ZQna7sKVA+YDEKMikZWP9wuKj/Hj0UbNmOo9gDNk=
+X-Received: by 2002:a81:9a11:: with SMTP id r17mr134196ywg.321.1583782682134;
+ Mon, 09 Mar 2020 12:38:02 -0700 (PDT)
+MIME-Version: 1.0
+From: Koushik Ghosh <koushik.ghosh@gmail.com>
+Date: Mon, 9 Mar 2020 12:37:51 -0700
+Message-ID: <CAG4Y8nypvkLpVpVSbDa-=p3fq1aJ9dPypvd=waKb+vSuhXXPcA@mail.gmail.com>
+Subject: hi
+To: shankaro@amazon.com
+Content-Type: multipart/alternative; boundary="0000000000002b8de005a071245b"
+X-OrganizationHeadersPreserved: EX13MTAUWA001.ant.amazon.com
+
+--0000000000002b8de005a071245b
+Content-Type: text/plain; charset="UTF-8"
+
+
+
+--0000000000002b8de005a071245b
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><br></div>
+
+--0000000000002b8de005a071245b--
+
+--5037CA06A4.1583782707/email-inbound-relay-1e-97fdccfd.us-east-1.amazon.com--
