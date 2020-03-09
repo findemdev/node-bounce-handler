@@ -3,14 +3,13 @@ const detect = require('../index');
 const expect = require('chai').expect;
 
 function readFiles(dir, cb) {
-  return new Promise(resolve => {
-    let data = [];
-    fs.readdir(dir, (error, files) => {
-      files.forEach(file => {
-        data.push(fs.readFileSync(dir + '/' + file))
-      });
-      resolve(data);
+  let data = [];
+  fs.readdir(dir, (error, files) => {
+    if (error) throw error;
+    files.forEach(file => {
+      data.push(fs.readFileSync(dir + '/' + file))
     });
+    cb(data);
   });
 }
 
@@ -50,9 +49,9 @@ describe("It get info about emails with promise", () => {
   it("Should detect bounces", (done) => {
     let folder = __dirname + '/eml/bounces/';
     let promises = [];
-    readFiles(folder).then(data => {
-      data.forEach(row => {
-        promises.push(detect.getBouncedEmailDetail(data.toString()));
+    readFiles(folder, data => {
+      data.forEach(d => {
+        promises.push(detect.getBouncedEmailDetail(d.toString()));
       });
 
       Promise.all(promises).then(results => {
@@ -68,9 +67,9 @@ describe("It get info about emails with promise", () => {
   it("Should detect FBL", (done) => {
     let folder = __dirname + '/eml/fbl/';
     let promises = [];
-    readFiles(folder).then(data => {
-      data.forEach(row => {
-        promises.push(detect.getBouncedEmailDetail(data.toString()));
+    readFiles(folder, data => {
+      data.forEach(d => {
+        promises.push(detect.getBouncedEmailDetail(d.toString()));
       });
 
       Promise.all(promises).then(results => {
@@ -87,9 +86,9 @@ describe("It get info about emails with promise", () => {
   it("Should detect normal mails", (done) => {
     let folder = __dirname + '/eml/ok/';
     let promises = [];
-    readFiles(folder).then(data => {
-      data.forEach(row => {
-        promises.push(detect.getBouncedEmailDetail(data.toString()));
+    readFiles(folder, data => {
+      data.forEach(d => {
+        promises.push(detect.getBouncedEmailDetail(d.toString()));
       });
 
       Promise.all(promises).then(results => {
