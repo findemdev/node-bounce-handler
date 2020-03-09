@@ -657,12 +657,15 @@ function MailBounceSnoop() {
     let array = dcode.match(/(\d\.\d\.\d)\s/);
     if (array) {
       return array[1];
-    } else {
-      array = dcode.match(/(\d\d\d)\s/);
-      if (array) {
-        return array[1];
-      }
     }
+    if (dcode.startsWith('DNS Error:')) {
+      return '5.4.4';
+    }
+    array = dcode.match(/(\d\d\d)\s/);
+    if (array) {
+      return array[1];
+    }
+    return null;
   };
 
   this.is_a_bounce = function (mail) {
