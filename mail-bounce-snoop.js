@@ -661,6 +661,9 @@ function MailBounceSnoop() {
     if (dcode.startsWith('DNS Error:')) {
       return '5.4.4';
     }
+    if (/does not exist/.test(dcode)) {
+      return '5.1.1';
+    }
     array = dcode.match(/(\d\d\d)\s/);
     if (array) {
       return array[1];
