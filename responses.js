@@ -172,6 +172,7 @@ exports.bouncelist = {
     'Temporary lookup failure': '5.4.4', //
     'unrouteable address': '5.4.4', //
     "can't connect to": '5.4.4', //
+    "recipient server did not accept our requests to connect": '5.4.4', //
 
     'Too many hops': '5.4.6', //
 
