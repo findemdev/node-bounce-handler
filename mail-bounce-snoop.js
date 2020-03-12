@@ -669,7 +669,7 @@ function MailBounceSnoop() {
     if (array) {
       return array[1];
     }
-    return null;
+    return '5.0.0';
   };
 
   this.is_a_bounce = function (mail) {

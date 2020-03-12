@@ -1,0 +1,393 @@
+Delivered-To: ntumacder@murdockmartell.com
+Received: by 2002:ab3:67ec:0:0:0:0:0 with SMTP id y12csp572390ltm;
+        Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+X-Received: by 2002:a05:6402:689:: with SMTP id f9mr2142223edy.237.1584024260773;
+        Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1584024260; cv=none;
+        d=google.com; s=arc-20160816;
+        b=g6aouGZJyvXZX9Hr7GJmtmnjtd8HgZ96tIAIyJ0RGGN2XnIVCuegMAYNYPfYsYBctP
+         rUa9BsSgKnCX/Zo02NcjiHvHF/Mq07a0RpSPtlO6w31iMfiWmdypqUrr1tNx6r6a/XiO
+         rgRHzFhw7zH7KOL63Skza0ksPQpL+2mbfSrex/SBBz4RLMuiQnaxKfAgu3Opxdg4ouow
+         RttfbhZnvDST61Jaj9P33/6sdWsHf7dmJ8rkQLtXOimCRz+gfx5WohgOxiT4yoM7bHq+
+         Szg8bJV5h6whK6Lg4ep/f4bgflpGGwun9yx7Bniz1/YSd7y20c3fk9+384mbgkn9EmSj
+         k5Og==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=in-reply-to:references:subject:from:date:message-id:auto-submitted
+         :to:dkim-signature;
+        bh=JSfL1HrWBLmBicz5HS8VSWtV9h3OpmPozxIeUAhnnxI=;
+        b=xhafhqWjHKCd+sCO7rW6hQbrrPKzQ1WIK+qZ8l/4N0iUFzazEYTd3WfB8vmge10Z2S
+         O3dNyDiOSZmlOjn32SPPgG1FpbR/KO+SwanNGBOCj9lRZLJDTuvqhptnUz0BaeVP1pHh
+         8W1GjW6pEwe4RsJuRd7tdLpBK9bXLp1ez0cssVRsHkfa0pjp+1N3pvFXK3r0RXbjGXpx
+         P0JQXHcQnnKqtNnCA/LVF5F3YpuKd7n63PHedxUYI84ABKlzzWWfAQ81AKa3x0GzqHwS
+         s1j5SpCwNJnWGKekwh20v5eoH9o6Nqlc3V7u3sSM1d/DrBFATi2ssuMU34kjDnGUdg6B
+         LIBA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@googlemail.com header.s=20161025 header.b="g+/jxFs7";
+       spf=pass (google.com: best guess record for domain of postmaster@mail-sor-f65.google.com designates 209.85.220.65 as permitted sender) smtp.helo=mail-sor-f65.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=googlemail.com
+Return-Path: <>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id l6sor5415811eds.22.2020.03.12.07.44.20
+        for <ntumacder@murdockmartell.com>
+        (Google Transport Security);
+        Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of postmaster@mail-sor-f65.google.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@googlemail.com header.s=20161025 header.b="g+/jxFs7";
+       spf=pass (google.com: best guess record for domain of postmaster@mail-sor-f65.google.com designates 209.85.220.65 as permitted sender) smtp.helo=mail-sor-f65.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=googlemail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=to:auto-submitted:message-id:date:from:subject:references
+         :in-reply-to;
+        bh=JSfL1HrWBLmBicz5HS8VSWtV9h3OpmPozxIeUAhnnxI=;
+        b=g+/jxFs7vSh/5rbXGc8VSdncJLurq6Mwxko9iC/PkHzwdNX8W2zi48+wFHHCAA9cua
+         K5WSdbc0C+vGG4aLXJyVO4/J7KHwN7wG+PnmuHxRgoxZS3eyKXQP9AjClWR4e5EC25mt
+         xy4BhnK3IVlgG3OThr9ZMKtStZoUWHqKzUhwmcUsF24wHj9UbLZtlMCtP3R38d03YT1z
+         PGNp4ni5WkOt4vBzSykx5swG3iAk8CkYBZh3nkApYaTr67ZEq5DOh1m3nPYaJ2SZW2Yc
+         bfA/xBRMxSbRjgfrC08HV3y9b29CMlxoYZgvbpXW7eSSPN+tIy1gB2XuP55DcBWTF/8+
+         c+Yg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:to:auto-submitted:message-id:date:from:subject
+         :references:in-reply-to;
+        bh=JSfL1HrWBLmBicz5HS8VSWtV9h3OpmPozxIeUAhnnxI=;
+        b=ejTdP8+TYnoir4TsMUb33aAfLzwkvq3PDYWMfQjt/ErUzUK8b5sXtv+A5kF4TM/Wig
+         90R5CxXRiLm6bk0jKsEdpxa2hKe5lc7P8HRKV2Nx/1TtPhZWm47dKL3tWwuwCBgJU9nU
+         GAzgB3Qi7pfueXjzxEE+g6jjVFYMvpKXJR1L5Q39EAeAE6qWcCT3Ug+juYz5DNGK+SsB
+         AM2X8xpF1OKkYyFt9aDHP0Fo94X242r+29Z0RcaKh8XaDiKqUKN1AkdCSjh6tIoHRPWk
+         VRXwFr9BqrU1r3WvSYREQHmPeirBQdBtA62yLmmK1cfxHqQj/neE9P3VoLa9MrrZhazi
+         GZCg==
+X-Gm-Message-State: ANhLgQ1Dtr73zVicEJbVIsVPEE2WwoTVLrhelldk0EOMDT6gZ7o+lSYs
+	2kaBsVOpdPDZ5W4CZYsOAEvotRiWNQIjloiq/PY+EA==
+X-Google-Smtp-Source: ADFU+vvD9UAoPwxGVQG7GUOxaITt7+RYwvgSfFVcbCSi/7IHIORMi9S0huyYal3I1IGl/PlcfPUHDmQKYDusK/A5tG3ungLiVLwl0uw=
+X-Received: by 2002:a50:b043:: with SMTP id i61mr8012225edd.194.1584024260548;
+        Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+Content-Type: multipart/report; boundary="0000000000005d94ec05a0a96305"; report-type=delivery-status
+To: ntumacder@murdockmartell.com
+Received: by 2002:a50:b043:: with SMTP id i61mr7067933edd.194; Thu, 12 Mar
+ 2020 07:44:20 -0700 (PDT)
+Return-Path: <>
+Auto-Submitted: auto-replied
+Message-ID: <5e6a4ac4.1c69fb81.7f8d8.0141.GMR@mx.google.com>
+Date: Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+From: Mail Delivery Subsystem <mailer-daemon@googlemail.com>
+Subject: Delivery Status Notification (Failure)
+References: <CAHuCV-0hQ445TAxmai6k0duoH7FqbKoo==68cgSnbqUJ19kJjg@mail.gmail.com>
+In-Reply-To: <CAHuCV-0hQ445TAxmai6k0duoH7FqbKoo==68cgSnbqUJ19kJjg@mail.gmail.com>
+X-Failed-Recipients: ismael.hernandez@groupon.com
+
+--0000000000005d94ec05a0a96305
+Content-Type: multipart/related; boundary="0000000000005d958205a0a9630b"
+
+--0000000000005d958205a0a9630b
+Content-Type: multipart/alternative; boundary="0000000000005d958c05a0a9630c"
+
+--0000000000005d958c05a0a9630c
+Content-Type: text/plain; charset="UTF-8"
+
+
+** Message blocked **
+
+Your message to ismael.hernandez@groupon.com has been blocked. See technical details below for more information.
+
+
+
+The response was:
+
+Message bounced due to organizational settings.
+
+--0000000000005d958c05a0a9630c
+Content-Type: text/html; charset="UTF-8"
+
+
+<html>
+<head>
+<style>
+* {
+font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" class="email-wrapper" style="padding-top:32px;background-color:#ffffff;"><tbody>
+<tr><td>
+<table cellpadding=0 cellspacing=0><tbody>
+<tr><td style="max-width:560px;padding:24px 24px 32px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:2px">
+<img style="padding:0 24px 16px 0;float:left" width=72 height=72 alt="Error Icon" src="cid:icon.png">
+<table style="min-width:272px;padding-top:8px"><tbody>
+<tr><td><h2 style="font-size:20px;color:#212121;font-weight:bold;margin:0">
+Message blocked
+</h2></td></tr>
+<tr><td style="padding-top:20px;color:#757575;font-size:16px;font-weight:normal;text-align:left">
+Your message to <a style='color:#212121;text-decoration:none'><b>ismael.hernandez@groupon.com</b></a> has been blocked. See technical details below for more information.
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr style="border:none;background-color:#fff;font-size:12.8px;width:90%">
+<td align="left" style="padding:48px 10px">
+The response was:<br/>
+<p style="font-family:monospace">
+Message bounced due to organizational settings.
+</p>
+</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+
+--0000000000005d958c05a0a9630c--
+--0000000000005d958205a0a9630b
+Content-Type: image/png; name="icon.png"
+Content-Disposition: attachment; filename="icon.png"
+Content-Transfer-Encoding: base64
+Content-ID: <icon.png>
+
+iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAAAXNSR0IArs4c6QAAAAlwSFlzAAAW
+JQAAFiUBSVIk8AAAActpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6
+eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYg
+eG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4K
+ICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1w
+PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJo
+dHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+
+QWRvYmUgSW1hZ2VSZWFkeTwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8dGlmZjpPcmllbnRh
+dGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9y
+ZGY6UkRGPgo8L3g6eG1wbWV0YT4KKS7NPQAAEAVJREFUeAHtnV9sHEcdx+fufH/9344dJ7FjN6SU
+FKSmrdqkqkRdoTapKtHjqfACQYgHJCRSAYKCQEHwwBvhBfEChCKkIniwkJBKC9StlOIkNE3IHydp
+kzpx7Tixnfi/73znO37f823Zbn23u7N7uzcz+5Os272bv7/5eGZ+Mzu/ZSyQQAOBBgIN+KWBkF8Z
+10u+jzyV3hsOs8FQiO0tFAoDoVDoiWplKxaLb4TD4bFikZ0pFNjwqdeGzlQLL/tvSgL06NPpNEGT
+JhjS1MCtDht5nqAbIpiGTr46NOQwLeGiKwPQ3sF0WzzODjFWPEyt1F+jlrpOMB3LZNjRM8NDczXK
+o66SVQKg/QfTR6i3AThOexurjYde6ejIK0NHrEYQNZzUABE4gwTOMWqcWvU4Zu2OHukQgTRsFlDU
+38OiFtys3PsOpI8SPK9TOL/gQRH7UQaUxay8ov4uXQ+0MdcpDDMWeqC+GqV4NpsND8o2N5IKoA2T
+vEjweDbXscvofKEQGpTJ9JcGIAHg0WCTCiIpABIIHukgEh6gjTlPcYxaxisTXYPA6ed8NhsaEH1O
+JLwVFo9jwiwcPICvtVx2XAsrEWFLTgUvm8fPiVuHUE/v7j3tE1cvvSJqHYQdwsqLhFjncV3iqcZN
+08yuLG/6vdMvabHxSVEXGxucVt6v+OUVZleyb4hGWbKphTW2trFoPFE1zVw2w5bn59jq0gLL53JV
+w1r9sVyXAavh6ymckEMYDV3Y13reqSIBTlv3NtaxbQdLNDaxSIP5/xPCIGxzeydriMYYgKLHQJwW
+pY2GsnkaykacJuR1fOGGMLesrtYt3ayls8sVfS/MTrP5mdtO0xLSKhPOCkskWJpaittkD4cjrLtv
+wDV4QA1ARJpI24G0luvmIAnvowoHEM0XjvCqqQTPzgFWaZLMmy7iIc2uvn6CiF+lTurmpOxO4vLX
+1kmunHFheVFUrt11DR6zSTJn0UrRYokkQeSoJ+ov19FJMTyNKxRApJlDvNpp6+4xtbB409bHA0St
+WxzNrbjrqC+HV9dCAURd/CCPYjC8wET3SprIQovFYlzZ8daRKzMXIgkDEDZMqb5cw1dHzw4XVGUv
+ic4dO1lhPW8v0kbo/nJdeeJ6HkcYgHD0hkc76Hmw3uO1NMTiLNXUzIoca0SRCMM/ixAiDECkzQEe
+jTa2eDd0GcvX2tXD1tcytiGiM2cBQEZlOr0vFgu2lYqepxYmu9W6xJKp0mo1IGJEhVXhqavVtN0O
+J0wPRBuOA3Yr7yc8WlkTNIwBHjsQ8dRVy8/rT2EAIsXYnkDXcs3HakPFqReCYC60nstajWa7rlYT
+djucSADZrnvMZGfddoIcEWLJ/z8aUlxfp57IMkQcuXkfRWqAvFeneY5FMu0LeXceAzHPrfYhAoBq
+r+OP5VDIrfGuEX0sLb+/CADyqQUAEc8akU/FrZhtAFBF1dT4h7JlJjpEUgOUXV2pMQXmyWfo0deK
+QhAVYJnZWCOqmJZPP0gNUJ6GCb8lZ2J1lcx7mwuNftdJn7/UAK0uLurr6sv1yvxd03w31oj8h920
+oJsEkBqgQmGdTk/4BxHgKdDajxWBeS/iGpHUAKHhli30AFYamCfM4p0ZW9FKa0R8j4DYysfNwNID
+hB4IR2+8ljWawFsZvozlKtCcCSvWooj0AKEh7t6e8rw9ZiducOdpY8+MOw+3IioBEI4kL96ddUtn
+puksTE+xqua7WQoCmfVKAIT2mqNeqFZn2/U8YNhy0vvo0xLhWhmA0BgzE+NsrYbzIcx7pm9cE6Hd
+XSujUgDBrL/1/ntsqQbD2RJZXBOXz1s2211rQZ8TMvcm4HMBXc+eXopx99ZNmqMsso7tfSxMT7A7
+EazzoNfhsbic5FsvcdUDCJoniFaXl9j46Fk6BLiVtdDD73ZBAjiYLM/Tn9XFwnppdDfLoSZAZYhC
+kSj1RpMlCFKt7XT4sJ0lyE9QJZgACqwrLE7aWWV2s8HqLS11AaKWCNFhs0gsUXrgHXMY/EEAkP5R
+VHy3trqsdE8DHWwmSgMEhQCiMDmKwgqwJlpPo90Hn5U1oJQVVkkN4UgDC9NJ0kDsayAAqKyzEkQN
+3h+Btt9k9RUjAEjXHhjKQtQbBWJdAwFABl1FaCgLIDIopcpt8O+mUw5OsibIl1CEztRH4d9Hd5wd
+Vlhuba1kxmPLIpANDSgPEFzfNXd0shR58ajmBqZ0xr1MTZ4sNpj8qi8iQh3KAqSB09TeYdu7Knz/
+tJHTKqxgq74arSRAGKo6ybm4U+cLWHAESFjFxn6YikObcpPoJLlb6d454Bie8mhW+oAfoG2795RA
+0n+vwrVSAMHd3RbyXYjhy21Bb7T1nntZY1uH20nXdXrKAIThCq5+ay2d5Cc6Gk/WOpu6SV8JgNDj
+1KrnMbZkhBYit+66t7THZvxNxnslAIKZXs1Ed7th0dul2rfQkXfdQpLbmdRJetIDBHDceiuPnTbD
+y1fWmXAvQ7JTxVJY6QHCQ2J+CcDNZLw/1OhlfaUHCCvMfkn71m0sl8+znEtvNvSrHtXylRogzEW8
+nPsYFQ0nn0l6u2Emm5UWIqkBSjW3GNvU83tt/pWljVgXXo3pefnNMpQaoEgdPCAWo9cQQmCRrayu
+SgeR1AD5OXxp/7kx3aIiIFqlSbVM5r3UAGmNWE+fGMbQE8kiAUA+tCQgksW8DwDyASBkCfMeE2vR
+RWqA6sHqWSdQKskaAST6GpHUAPnh2s4Iy+pydSefWCNapyPToorUAGXIM5nfsjw/Z1oEWGb10Fua
+FnSTAFIDBI9k8Ankl2D4WrLgJbZk3pNlJqJ5LzVAAMdKD1ArwO7evmk56UJ5oVE0iKQHqBbeyKxS
+MTM5bjVoKVzJvKc5kUgiPUB52gn30kOr1viAZ43jUY48DXsirRFJDxAadGFm2tO5EOY+t268r7Fk
++xNrRKKIEgBhIg0PrV7J9dFzrNr6j1fl8CIfJQCCImGR3ZmaqLlOx98dtWR51bwgHmWgDEDQJyyy
+2+NjNVMt4IEHWJVEKYDQsOiJbly+4OoQg+Hq2rl3lIMH+lTybDzOSqDBt+zoZe3d26AHbsFaz+S1
+d10FkrswPkRUEiDoOZFKlRoe1tLWnfewlo4uFmmwpg70OAt3pkuWFo+p7kM71yxLaxqrWfb+JtxM
+59gX5+6w8SujVJDR0vkxPATfVOEoELYl4KB8YXba34LXUe5KAxQij/WAaIHenVHyPE9gAI5bjH8N
+p47a1pOiKDeJNmoVEDXR2TF8BmJfA8oDBJVh7oOeKIAoAMi+BsoxAFGKnE8FYk8DQQ+k01cskWSN
+dXAYUVekur8MADI0ESCCq1/Io/RmHvwFUlkDSltherU8MX2TPXR3hv5m2b2L8/qfPry+RL4QTza2
+sBP0Sqh/tKrlyu5DJRgulAfo2ckb7OvXLrOejLnz8E+Rg3H8fXlmik2Sq99jW3rY77ucrWQb2kO4
+W2UBQm/z4wvvWAJns1bdTs7GfzB5nR0imL7X9wl2knolFUXJOdALV86xX719nBsePSgA6Q9XL7If
+Tozpv1bmWrke6EcXTrNnb7r/cBmGtWZ6cO371BupJEr1QLWCRwPmC7TB+vPxq9qtEp/KAPTFG1dr
+0vMYKQFEXyGLThVRAqBPkll++Mp5z9oUk+s9dXAq1osKKwHQCx7CozXaixNq7OhLDxDM9Qfpz2vZ
+t7LEHp6b9Tpbz/OTHiDMffySr87eIs8b4pzx4tGT1AA153Pss9NTPHpxJc5TtI+WohXuInkkk1Wk
+BgjDl9+ynybTa2tyOdbU61RqgCptiuoVUOvr+7PkUJM8b+QIInzKJlID9DDtrPstj5XNeQxj+Zz4
+PhGN+pQaIGNl/b7HhFo2iAKAPKZqnSb2MllmAUAeA4Ts0AvJYpkFAPkAkEyTaqkBulIHD8hfoGes
+NxP4QoR5L7qIBNB1u8q+0tRqN4rr4S/SO8MqSckyowfSjBIOh4VZvhYGIPqPHTMq2uz+NL341m8Z
+SW6c8KhUDkyojZPqUDiyVCl8vX0vDEChUPiMXeXdpFMU7zb71wuNUu/zQTRmWuw89UJ6f9bhUHjM
+NFKdBBAIIGYbIOj45b5dvqn6NzZ6wBxBpFlmoUhozLdC28xYGIDodRJcAP1t+042lUjZVIvz4BP0
+uvG/tNh4YzS2O3I0H6LPSCjysvMSeJOCMACdem0IANmeSEONv7jvM95oU5fLT7q26+6sXZYm1flc
+4ezxf/7JWgz/QwkDEFRF3jOGeVT2Bh3+e7OrhycqV5zX6IzYq5znxKiO/r8hxkathQKI6nXMRt0+
+EvSnn37Ikwk1Js7f7un9SN52bqKx2Et2wvsdVjivSvsOPDdGSuvnUdw2Opb80si/WHON3s+1GI6w
+Z/p3W7K8Nis/WZps7OJZodpEtB4Iw9iRzZRv5TuY9c899jk2qnuTspV4VsKg53l8133c8CAPekX4
+m1byqqcwwgFE7y8ZIgVu7j7DgmZXaGvhGw8/zn5nw8Q2S/a3lNbztFywQD0Qt5CLPVr/+SZ3fJ8i
+OqixPyWeGruU6d29B5tIB3lLkKfFvRHyrDFMJnMfvbe0lx6x4JETtMr8nZ4+9kdyj5el4ceJxBPJ
+/1w+feJnTtLwI65Q461eQU7mQlo6mdVlNjd9i92fzbCv0fPT+1eX2A56PVQ1wfrOSLKJYZGw2j5X
+tTSMv0UiDflr59+JGr8X4V5Y5wo0FzpE+2OvO1FygnqQ1s4udpFc+2qWUy89q9NLEAEmvQCaDwge
+K1sT+nhWruONqe9aCVePYYTtgaDMfQfSR2np9ltOFYs3K88TRH5IPJU6c+XtEw/6kbcbeQoNEBSw
+78DnaYU69IBTZcDZ+EoF13ZO064UvyEaXb3639Pe77NUKhDH985mfhwZuh0lmw0PUprcVplWnpb2
+TpZs9M7NbygcLsaaEnu0/EX9FB6gM8NDc4VCaJAawDFEmA95ARHgSaaavjT61lvXRQVHK7fwAKEi
+2Gh1E6JYlacINcXxfn4Iz6njwmyYVqurFAChgm5C1EYbrw0x8wfBqil2s99kgwd1FH4SbWyovYPp
+tni8MOx0Yo13uN+5PcnytNDohmDCjDmPDMOWXh/SAaRVzg0THxBNkx9p7UlBLW27n6Kb6tXqK80Q
+Zqzkib8PHabFxifpe+6JKp2OYB3d2xkNPcbkLd1jhTnV0vKCyOs8ZhWVtgfSV3z/wfQRWrU+TN9x
+PWGfo2EMw5nVnghznXg8+ebl0yOD+nLIeC3cZipPI3zw3qXhrr49v45GQziEdQ/9tdlJJxKJsBi9
+2gCvu6wm6HFouPprrDH2zKWT//5ltbCy/KZED2RsrEefTqdpVEpTr5Sm3yz3SptteaC3IbiuNTRE
+/3zx1PEXjXnJfq8kQPpGfeSp9F6CaZAex9lLk+YBmjc9of/deJ1ZWTq3urSYCkUi5+j5nZdHJVnP
+MdYzuHdBAzR3GsCygAtJBUkEGgg0sJkG/gd93k1L52vFKQAAAABJRU5ErkJggg==
+--0000000000005d958205a0a9630b--
+--0000000000005d94ec05a0a96305
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; googlemail.com
+Received-From-MTA: dns; ntumacder@murdockmartell.com
+Arrival-Date: Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+X-Original-Message-ID: <CAHuCV-0hQ445TAxmai6k0duoH7FqbKoo==68cgSnbqUJ19kJjg@mail.gmail.com>
+
+Final-Recipient: rfc822; ismael.hernandez@groupon.com
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: smtp; Message bounced due to organizational settings.
+Last-Attempt-Date: Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+
+--0000000000005d94ec05a0a96305
+Content-Type: message/rfc822
+
+X-Google-Smtp-Source: ADFU+vssrEAGcDDJl88pjikvZAqRFU+zIly8w5dhmDiNVEElds4R8BTkAex+sN52K20h7RYvTFt1
+X-Received: by 2002:a50:b043:: with SMTP id i61mr8012187edd.194.1584024260070;
+        Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1584024260; cv=none;
+        d=google.com; s=arc-20160816;
+        b=M3onmoFGnhMuQCX+IK8roMOGkLf7zxQ8fNkaXc2akrECHpK+xGS5W3jeA3oE29n8vk
+         K1Ik0NThxoPVU/8a31aJyfyFiJtVaf+WlnVSNbaG6f6+AktnL11YB7/Em3wArro8+hxd
+         vXUKoRQECVBK75TpFzsu1OSAMrIksLVHfHn61U8v00ZZyXYS084aLUeU/iNpgkP0lvOG
+         SUSmSymxGQQ/GgvO6vjmBrLgbhWhOqsxxdbRH6I9I5qC7V5Fx+SY0GrW8GI23mrEKahp
+         4YYZmD0eAdbiRtk+yJcUyWo/AVolhm0Ds3CpiKA0DtkTGhXW8Bh+yt1Qc5l1mIg2bQns
+         /WcQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:to:subject:message-id:date:from:dkim-signature;
+        bh=bHQdrV9QXhEM6IL/BO4oaWZv2Y6q6z2mBO8eH5AF+AU=;
+        b=xJDHgCQq91S/HFP9dakh1Ym9VIb0b7x2/zvWXbbFf+X/blFOzHb/0zmsR3ECEdidN1
+         vXOg+WtEQCu7pg61AFTQipfQZz5nYvCMsRNsIOlgrrU2nqLs47xERN6DvC9N6iOQO13A
+         wRUOxRgafMn5j2/d795K3g+hu7r2+KwKNzOipjG7qeMvJ2lKPZXoyvxOdOeIRp1vWHBx
+         TWBToMScAgtgCId27/1zl1E328fsLZJTL7AjMm7xj6+jovVu5oz6OU2RWsQ5whY2F0lG
+         m9yNBF3hOQ5DJCp0GbWHBsol1HFv7rX0hq+oWt/EOa/Qtk2kHBpZvexeMjqL7FfFWPj7
+         w9nw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=neutral (body hash did not verify) header.i=@murdockmartell-com.20150623.gappssmtp.com header.s=20150623 header.b=WqSP1CH6;
+       spf=neutral (google.com: 209.85.208.177 is neither permitted nor denied by best guess record for domain of ntumacder@murdockmartell.com) smtp.mailfrom=ntumacder@murdockmartell.com
+Return-Path: <ntumacder@murdockmartell.com>
+Received: from mx0b-001a0501.pphosted.com (mx0b-001a0501.pphosted.com. [67.231.152.95])
+        by mx.google.com with ESMTPS id u5si3316763ejj.368.2020.03.12.07.44.19
+        for <ismael.hernandez@groupon.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 12 Mar 2020 07:44:20 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.208.177 is neither permitted nor denied by best guess record for domain of ntumacder@murdockmartell.com) client-ip=209.85.208.177;
+Authentication-Results: mx.google.com;
+       dkim=neutral (body hash did not verify) header.i=@murdockmartell-com.20150623.gappssmtp.com header.s=20150623 header.b=WqSP1CH6;
+       spf=neutral (google.com: 209.85.208.177 is neither permitted nor denied by best guess record for domain of ntumacder@murdockmartell.com) smtp.mailfrom=ntumacder@murdockmartell.com
+Received: from pps.filterd (m0204225.ppops.net [127.0.0.1])
+	by mx0a-001a0501.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 02CEiH9w025679
+	for <ismael.hernandez@groupon.com>; Thu, 12 Mar 2020 09:44:18 -0500
+Authentication-Results: ppops.net;
+	spf=none smtp.mailfrom=ntumacder@murdockmartell.com;
+	dkim=pass header.d=murdockmartell-com.20150623.gappssmtp.com header.s=20150623;
+	dmarc=none
+Received: from mail-lj1-f177.google.com (mail-lj1-f177.google.com [209.85.208.177])
+	by mx0a-001a0501.pphosted.com with ESMTP id 2yp8ey5mxr-7
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=OK)
+	for <ismael.hernandez@groupon.com>; Thu, 12 Mar 2020 09:44:18 -0500
+Received: by mail-lj1-f177.google.com with SMTP id f13so6751519ljp.0
+        for <ismael.hernandez@groupon.com>; Thu, 12 Mar 2020 07:44:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=murdockmartell-com.20150623.gappssmtp.com; s=20150623;
+        h=from:mime-version:date:message-id:subject:to;
+        bh=AjKEjypw9WVWT7APn3Qqs2NhScOBP0i8ewpSdvS3eWU=;
+        b=WqSP1CH66URbvXIskjKRlWZzKVEvHDoJNSkpCfNDhmVUGZf44TS9awZSO/2DUVpOCo
+         jEvFuTmQ4y1n/p1XCco9qWtrs1Em9HAt4/3H2jMACnOWDG4xFC6Ny9Yt0Eb+BZDeYThh
+         EvgaT5y91oJtzhUJfSQyhqoiE8y5VUsXuwBmr+h1TU262xXSj6dLY8XF4lRBy/VRlX+1
+         zmpDPg8xVwP30ORMMfq6gqvlkPc0z6bc6TlKL3wQWioh9l5WtMMR1Uut2wfOJhJrQ/Re
+         5V8ZBL0ax06Ha/pPxkOcmxAt1DkxD+0SHXSVQHI2Pte/qM/jsDIYhHSmJvLcef8oo8Sp
+         8xgw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:mime-version:date:message-id:subject:to;
+        bh=AjKEjypw9WVWT7APn3Qqs2NhScOBP0i8ewpSdvS3eWU=;
+        b=PMuNtH+akwPSBFdlvWDj3GezD6NIu+UdvexHk0CWEpyDVkO4gaCrjAV8pwp4zydgtx
+         sJ8hdHCFqL9ypy69guHai+fo+FyIAZiOTsO+S14JdqpZ5IV04mF3xot9cXu/msVRLIz5
+         oiA6W51ZaXrcv5MXl/qQwVFknJJiw38NRFUL4/cPahS2iaCVHkQbWrRhI2i5FQ6MiwAX
+         BA2deXe1BQWG4UNCPv3ysbmDDl5rGP8RjjylxPtopEgCK0OiYWEKi+346E1n/aqhy/B6
+         tEcMkLVY3gzI3BzHTzPLixTpGLA7pEIGrK4gdlmL/FUCm7C1F5WsuHeRNFiXq0A7Q/aL
+         P6gA==
+X-Gm-Message-State: ANhLgQ36bj7eLKTlWaEom1YcXz2409CfFARrwd4gneChK2+gikoMMiWP
+	+RFEo/EbSHYEbz9PJkSvN8iNyLIPsfth9imJYd80gmlO+0c=
+X-Received: by 2002:a2e:8eda:: with SMTP id e26mr5286883ljl.219.1584024257519;
+ Thu, 12 Mar 2020 07:44:17 -0700 (PDT)
+Received: from 360097892466 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 12 Mar 2020 07:44:17 -0700
+From: Nancy Tumacder <ntumacder@murdockmartell.com>
+Date: Thu, 12 Mar 2020 07:44:17 -0700
+Message-ID: <CAHuCV-0hQ445TAxmai6k0duoH7FqbKoo==68cgSnbqUJ19kJjg@mail.gmail.com>
+Subject: The Analyst, Tax Technology - Fortune 100 Company
+To: "Ismael %28Izzy%29 Hernandez, CPA" <ismael.hernandez@groupon.com>
+Content-Type: multipart/alternative; boundary="0000000000002f6c7105a0a963d3"
+X-CLX-Response: 1TFkXGxsfEQpMehcbHhkRCllEF2JAAUlgU0NHH2ZEEQpYWBdtGBtQbGEdQ18 fHhEKeE4XYW9vfEd6W0NbRX8RCnlMF2l7AXtsfX1gXWB9EQp5QxdocmxSeXoeZExfRhEKQ0gXBx 4fGxEKQ1kXBxMfEQpDSRcaBBoaGhEKWU0XZ2ZyEQpZSRcacRoQGncGEx9xGR8QGXcGGBoGGhEKW
+ V4XaGN5EQpJRhdNWEVfWkVEdUJFWV5PThEKQ04XaBhHemhjQEtZWEJ1Zl9bHEtaf39dZkhpaUdn bl8aUE0RClhcFx8EGgQbExwHEx9PHhodGR0FGxoEGxsaBB8aBBseHxAbHhofGhEKXlkXfEQBE04 RCk1cFxsdGREKTFoXaWtpaE1pEQpCTxdrfFlQWBlpXhhmWhEKQ1oXGBoTBBIfBBgaEgQbHR0RCk
+ JeFxsRCkJcFxoRCkJFF2V6bEVHWQF8Wx9zEQpCThdhb298R3pbQ1tFfxEKQkwXbRgbUGxhHUNfH x4RCkJsF21aTFxQUGx+YBllEQpCQBdpX0VgG01wS0F9WxEKQlgXaGEFWhJOaUlyEhIRCk1eFxsR ClpYFxsRCnBoF2daUmcZSHxre1JCEBoRCnBoF2JBGngcbBlhXx94EBoRCnBoF2VpZV0Bc2xSaRJ
+ cEBoRCnBoF2doXl8BH2ZDU25gEBkaEQpwaBd6XUscf0VOe1lzQBAaEQpwfRdnGEwcEgVsTHtnAR AeEhEKcH0Xa0gZBWESSFl5BXAQGhEKcH8XaGN/HnN8QwEBAVMQHhIRCnBfF2cYTBwSBWxMe2cBE B4SEQpwfxdmTB0BAWtYQl4aRRAZGhEKcF8XZ19bH2JPcmNzfGQQGRoRCnBsF2JYYxptTh5oSW0F
+ EBkaEQpwTBd6ZG9vQ0sBARxlRhAaEQptfhcbEQpYTRdLESA=
+X-CLX-Shades: MLX
+MIME-Version: 1.0
+X-Proofpoint-SPF-Result: none
+X-Proofpoint-SPF-Record: N/A
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138,18.0.572
+ definitions=2020-03-12_06:2020-03-11,2020-03-12 signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 lowpriorityscore=0
+ malwarescore=0 bulkscore=0 phishscore=0 suspectscore=0 mlxscore=0
+ adultscore=0 priorityscore=143 mlxlogscore=527 clxscore=115
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2003120080
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+--0000000000002f6c7105a0a963d3
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Ismael,
+
+I am impressed with your experience at Groupon and feel you would be an
+excellent fit for my client. We are looking for a Tax Technology Analyst to
+manage all aspects of systems and applications used for reporting
+consolidated taxes for this multi-billion Fortune 100 corporation. They
+have an excellent reputation, offer a rotational program into other tax,
+accounting & finance groups encourage teamwork and offer amazing career
+growth. In addition, they have excellent compensation and benefits
+including 401 K match, generous PTO policy, tuition reimbursement program,
+profit sharing program, and flexible work from home 2 days a week!
+
+I would love to schedule a quick call to provide more details on the
+company and opportunity. Let me know what time/day works for a call.
+
+Nancy TumacderMurdock Martell  | Your Chief Financial Resource
+ntumacder@murdockmartell.com
+(312) 543-5339 www.murdockmartell.com
+
+--0000000000002f6c7105a0a963d3
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: Quoted-printable
+
+<p>Hi Ismael,</p><p>I am impressed with your experience at Groupon and feel=
+ you would be an excellent fit for my client. We are looking for a Tax Tech=
+nology Analyst to manage all aspects of systems and applications used for r=
+eporting consolidated taxes for this multi-billion Fortune 100 corporation.=
+ They have an excellent reputation, offer a rotational program into other t=
+ax, accounting &amp; finance groups encourage teamwork and offer amazing ca=
+reer growth. In addition, they have excellent compensation and benefits inc=
+luding 401 K match, generous PTO policy, tuition reimbursement program, pro=
+fit sharing program, and flexible work from home 2 days a week!</p><p>I wou=
+ld love to schedule a quick call to provide more details on the company and=
+ opportunity. Let me know what time/day works for a call.=C2=A0</p><p>Nancy=
+ TumacderMurdock Martell=C2=A0 | Your Chief Financial Resource<br><a href=
+=3D"mailto:ntumacder@murdockmartell.com">ntumacder@murdockmartell.com</a><b=
+r>(312) 543-5339=C2=A0<a href=3D"https://urldefense.proofpoint.com/v2/url?u=
+=3Dhttp-3A__www.murdockmartell.com&amp;d=3DDwMFaQ&amp;c=3DLNdz7nrxyGFUIUTz2=
+qIULQ&amp;r=3D1LT0XuBw_sqgRqadSbIJ9GMBHAb2QLyCgdz_GbV2Km0&amp;m=3DNv6ft1Mtc=
+bjxATP-rGdA-rUfQfcqQNGDc7EK1V-9GqA&amp;s=3DMnA-CY6_0ZnMiOg0hHTTnN0cMzb3w5fL=
+k4xvo3Cpn9o&amp;e=3D">www.murdockmartell.com</a></p><img src=3D"https://mes=
+sage-cb.findem.ai/t?i=3D5e6a4aa1be6a286fbe7c2b7e">
+
+--0000000000002f6c7105a0a963d3--
+
+--0000000000005d94ec05a0a96305--

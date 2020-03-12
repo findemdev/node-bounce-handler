@@ -169,6 +169,7 @@ exports.bouncelist = {
     'couldn\'t find any host named': '5.4.4', //
     'couldn\'t find any host by that name': '5.4.4', //
     'PERM_FAILURE: DNS Error': '5.4.4', //SB: Routing failure
+    'DNS Error': '5.4.4', //SB: Routing failure
     'Temporary lookup failure': '5.4.4', //
     'unrouteable address': '5.4.4', //
     "can't connect to": '5.4.4', //
@@ -214,7 +215,8 @@ exports.bouncelist = {
     'TRANSACTION FAILED': '5.7.1', //
     'Transaction rejected': '5.7.1', //
     'Wiadomosc zostala odrzucona przez system antyspamowy': '5.7.1', //.PL rejected as spam
-    'Your message was declared Spam': '5.7.1' //
+    'Your message was declared Spam': '5.7.1', //
+    'Message bounced due to organizational settings': '5.7.1' //
 };
 
 exports.autorespondlist = [
