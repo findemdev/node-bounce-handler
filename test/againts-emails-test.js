@@ -7,7 +7,10 @@ function readFiles(dir, cb) {
   fs.readdir(dir, (error, files) => {
     if (error) throw error;
     files.forEach(file => {
-      data.push(fs.readFileSync(dir + '/' + file))
+      const allow = !process.env.ONE_TEST_FILE || process.env.ONE_TEST_FILE == file;
+      if (allow) {
+        data.push(fs.readFileSync(dir + '/' + file));
+      }
     });
     cb(data);
   });

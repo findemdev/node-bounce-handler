@@ -20,7 +20,10 @@
       "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": [
         "<node_internals>/**"
-      ]
+      ],
+      "env": {
+        "ONE_TEST_FILE": "205.eml"
+      }
     }
   ]
 }
