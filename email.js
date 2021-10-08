@@ -2,6 +2,7 @@
 
 const EOL = '\r\n';
 const PARTS_DELIMITER = EOL + EOL;
+const addressparser = require('addressparser');
 const libmime = require('libmime');
 
 module.exports = class Email {
