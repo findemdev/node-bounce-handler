@@ -1,0 +1,290 @@
+Return-path: <>
+Envelope-to: j.w@ringcentral.com
+Delivery-date: Mon, 30 Oct 2006 15:51:15 -0300
+Received: from exchangeadmins@utdallas.edu ([200.42.0.180])
+	by j.w@ringcentral.com with smtp (Exim 4.60)
+	id 1GecE2-00046Y-EA
+	for j.w@ringcentral.com; Mon, 30 Oct 2006 15:51:12 -0300
+Received: (aa); 30 Oct 2006 18:53:46 -0000
+Date: 30 Oct 2006 18:53:46 -0000
+From: exchangeadmins@utdallas.edu
+To: j.w@ringcentral.com
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="1162233858postino9.prima.com.ar2257932"
+Subject: Undeliverable: Hi Vinay, RingCentral is hiring a Technical Account Manager
+
+--1162233858postino9.prima.com.ar2257932
+
+
+[EXTERNAL]
+
+
+Delivery has failed to these recipients or groups:
+
+Vinay Gujar (vpg170030@utdallas.edu)<mailto:vpg170030@utdallas.edu>
+The email address you entered couldn't be found. Please check the recipient's email address and try to resend the message. If the problem continues, please contact your email admin.
+
+
+
+
+
+
+
+
+Diagnostic information for administrators:
+
+Generating server: UTDEX03.campus.ad.utdallas.edu
+
+vpg170030@utdallas.edu
+Remote Server returned '550 5.1.10 RESOLVER.ADR.RecipientNotFound; Recipient not found by SMTP address lookup'
+
+Original message headers:
+
+Received: from UTDEX04.campus.ad.utdallas.edu (10.182.72.102) by
+ UTDEX03.campus.ad.utdallas.edu (10.182.72.101) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.4; Tue, 2 Apr 2024 16:28:56 -0500
+Received: from NAM04-DM6-obe.outbound.protection.outlook.com (10.44.46.82) by
+ UTDEX04.campus.ad.utdallas.edu (10.182.72.102) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4
+ via Frontend Transport; Tue, 2 Apr 2024 16:28:56 -0500
+ARC-Seal: i=3; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=pass;
+ b=XktFW21CjEijp9MoO2uBJjgjr0pMwwPFiHD4kRBKG3lTCIqmjqcC7q+LdxYE5lhLqHD1vT+zt/SN0M7gBcIMwjuWEuJ9lhfyz8si7MvuX3idGtXddLTcJgVaMDzbxgRvtmM4HTk6mCyU79IF8kzTjePON89SgByTp0ZfnfbNw9yRFiNv+6n6A7ss7oxIGaAbP/64MzJ42IuCXAnINn4jFBDp/nkZVmS7bDAlguLYEgcUBQiX5qC9L7ROIbWGpxLLFcCPJ1T8z6Ply2gNDjubRHeSug3X6yPyyB+1qYTtuAjN1u1h2G6jtxixxcakgqpjiYEOMojB3CD3pmJOL7nPLw==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=1SH/JlwMI1l2U5d1LozsLkTCC7wzpWnE/pmhLgtCXeA=;
+ b=k9iQkJ/K7EqV7TZbTAli3Tcd6dHw1ajnT3Y+RdhW9MPYcL5VGPIvb0XZD9jV7P3H2a7ftes8XLoSsgsnU68p8zB9Ez+DfeGiihn1breI5qJQz6NGVAQO+KYhksmprXMiGjK2GvW3ALV/wJjAfl+46MhiIMCDeejPFJyjyiJwkdDw11OjqGPdUMt/pMncxVtWZvTPjnJlv/bIwNmhLbtAkpPzDf3mvroi2VcNdOLKIZiSuKVlN6m+86Jf7y0Pqz1Cb9ZT22zU/0P2CvYt2lSWwnqomLOAVPSpdABbT/6nFBe7Pq8NrrCE1qBlAccaJ0OVfAHulEHdnaYFbJzAVM0MmA==
+ARC-Authentication-Results: i=3; mx.microsoft.com 1; spf=pass (sender ip is
+ 40.107.215.128) smtp.rcpttodomain=utdallas.edu smtp.mailfrom=ringcentral.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none
+ header.from=ringcentral.com; dkim=pass (signature was verified)
+ header.d=ringcentral.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=ringcentral.com] dkim=[1,1,header.d=ringcentral.com]
+ dmarc=[1,1,header.from=ringcentral.com])
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=pass;
+ b=ec9hcvh0g4QexYeCbLkZVKDf1wtQLLS63zfalGCEePC1bfL4QXQ+NYXFeDWmnhbiFnxKjVgnyWznPq4WsGTWFFbbuKls9c1fSErOHlUXOc3j+LndUyLuLDai/oE3XZ7Ooj7+hNQ6wtNrB8OdomUiGKDwtMJrwQ9YCX0EBlX+kWQo0dUvjzkS+mFIHT1ZPlkXp0sMs0zESuFqnEqDlKEM70ssm/5Fd9vROoq1YKTpAVMzmpEZQyPRBAJYOADcHiLl1xNon6XSgt9lyPpbjrlZlG46GMjklOK0YgOrlOEBrcKmLXL5bNi0rDzlx362Qd696F2lGYZK3yH0DCb40p2Mkg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=UKYKc9NSAlYr4VjY9fuYLlzOQ2t+jXziuPYzEnsVlms=;
+ b=QkwfGEszoAgJZwRkaO7XiuY/5LUn6PtHAVsPePLWPMAzmwUMKBUPQ26fm19vwNqUKuN3Cib99mYTvlPCyokyy6gTHJcvcN9F9ENDRmVsvjCG0isRM4tep3DVOxBuWLYrgvkoLyLkfrzhtHZWhaA5CBomLmHRr5XXZXLslzBuaPTlmsItv2CADdwaqNmGeUjNiCks2WIHNTy9DFFYq6CaniIZkAqSlk2oDMxp1ZswnEK9qQnC3kri9Zwl2JSjCb5SLrhUwg9748NKK00zHgMudlNTapxQ+r0uPC8vrOXvzJmzk8QhONgtuSqnkTGZPu3JhzUTqhEJfyxbtwPV0tdpDQ==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 40.107.215.128) smtp.rcpttodomain=utdallas.edu smtp.mailfrom=ringcentral.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none
+ header.from=ringcentral.com; dkim=pass (signature was verified)
+ header.d=ringcentral.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=ringcentral.com] dkim=[1,1,header.d=ringcentral.com]
+ dmarc=[1,1,header.from=ringcentral.com])
+Received: from CH5PR04CA0006.namprd04.prod.outlook.com (2603:10b6:610:1f4::11)
+ by SJ2PR01MB8484.prod.exchangelabs.com (2603:10b6:a03:565::7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7409.46; Tue, 2 Apr 2024 21:28:54 +0000
+Received: from CH1PEPF0000AD81.namprd04.prod.outlook.com
+ (2603:10b6:610:1f4:cafe::73) by CH5PR04CA0006.outlook.office365.com
+ (2603:10b6:610:1f4::11) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.46 via Frontend
+ Transport; Tue, 2 Apr 2024 21:28:54 +0000
+Authentication-Results: spf=pass (sender IP is 40.107.215.128)
+ smtp.mailfrom=ringcentral.com; dkim=pass (signature was verified)
+ header.d=ringcentral.com;dmarc=pass action=none
+ header.from=ringcentral.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of ringcentral.com
+ designates 40.107.215.128 as permitted sender)
+ receiver=protection.outlook.com; client-ip=40.107.215.128;
+ helo=APC01-SG2-obe.outbound.protection.outlook.com; pr=C
+Received: from APC01-SG2-obe.outbound.protection.outlook.com (40.107.215.128)
+ by CH1PEPF0000AD81.mail.protection.outlook.com (10.167.244.89) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7452.22 via Frontend Transport; Tue, 2 Apr 2024 21:28:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GDpmMD1qr19Lo382OyqzO3aDQ4r+vZJviI8R36vqX6Qi6kH53TK30ZifwaQR5CpnBmHrct9S1dpJP+J6WQv1xWKfYpvhBPGdX1CBWY51+X4rnaWLsBQQ+uw1WRNOVJoJQpzA3GCHEcGFUBXFBdRjDsFdia9lUFbxsijh7WbXeM9/NqgG/+6XINGdFu2GwCn08O4wgONEjNVbLIyHNDXlN88BbDWYz8ccbVUnPzpAeUXkbEekwlMnES93gf8lz21rCMneJlobBnh1+vTp1AyNnwVM23YgIJkAhI0ctpyDJ2VwUA/5xAmxq6ZN/qaJQwp6nlId/ym/3oLkt/IyQXt68A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=UKYKc9NSAlYr4VjY9fuYLlzOQ2t+jXziuPYzEnsVlms=;
+ b=OKyXgvVJw07EWiHzDidHaj7rI2OwXortw4kFbzxrP47T9dDd4dmqMTZBmTXKk1AtHLgAc5kQDoN1WRcFO0jSGY5O+m+7E8xK6J8xA/k1++RIpk3B2akCzRw667xostYFUL/s0OTtTST1qgOKaJ0BwIlAlq9YiyCHZ6DaLCb1SNOIiMLWD18S5j9QMHg7/r5ik8l2w858ppTe+98DLzu+2+9xO7T+ZR+PWaqEZsDv6GzNU4AkfHEUzUUKXk74juYupQ++tV2F8TXnwCmlcOnU3js6CgIQe4clsEpsLWTCk4l2CKDr+FmjUKCjRc01ONqHgp2286tSTR1HWYjbjjLaHQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=ringcentral.com; dmarc=pass action=none
+ header.from=ringcentral.com; dkim=pass header.d=ringcentral.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ringcentral.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UKYKc9NSAlYr4VjY9fuYLlzOQ2t+jXziuPYzEnsVlms=;
+ b=K4XldNbrOVP2rEuPkqvqlEyqTK2BoXxjINADwBLMWAf0Yv34IY1Ni3zpheI8xD7owxf2M5/gBwD7ipSYE72I0uaJW7GgzkWiCbx5gCeOpkf9EerH0eHlLGM4tt6joLn3vIcPAvRPV+YOWPDDEwPWLt4l5hKY6XEJbvGDbD6orRY=
+Received: from KL1PR0302MB5265.apcprd03.prod.outlook.com (2603:1096:820:4d::8)
+ by OS8PR03MB8859.apcprd03.prod.outlook.com (2603:1096:604:285::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.38; Tue, 2 Apr
+ 2024 21:28:48 +0000
+Received: from KL1PR0302MB5265.apcprd03.prod.outlook.com
+ ([fe80::6906:887c:15d9:38d2]) by KL1PR0302MB5265.apcprd03.prod.outlook.com
+ ([fe80::6906:887c:15d9:38d2%5]) with mapi id 15.20.7409.042; Tue, 2 Apr 2024
+ 21:28:47 +0000
+From: Julie Weintraub <julie.weintraub@ringcentral.com>
+To: Vinay Gujar <vpg170030@utdallas.edu>
+Subject: =?utf-8?B?SGkgVmluYXksIFJpbmdDZW50cmFs4oGgIGlzIGhpcmluZyBhIFRlY2huaWNh?=
+ =?utf-8?B?bCBBY2NvdW50IE1hbmFnZXLigaA=?=
+Thread-Topic: =?utf-8?B?SGkgVmluYXksIFJpbmdDZW50cmFs4oGgIGlzIGhpcmluZyBhIFRlY2huaWNh?=
+ =?utf-8?B?bCBBY2NvdW50IE1hbmFnZXLigaA=?=
+Thread-Index: AQHahUS/19GDvOjOI0K3jAqa8U2h9w==
+Date: Tue, 2 Apr 2024 21:28:47 +0000
+Message-ID: <KL1PR0302MB5265D9BE65AD05BB77C2F3F5F03E2@KL1PR0302MB5265.apcprd03.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-traffictypediagnostic: KL1PR0302MB5265:EE_|OS8PR03MB8859:EE_|CH1PEPF0000AD81:EE_|SJ2PR01MB8484:EE_
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: ryAuOIkNRBUEQgsC9pqEvfo0GFcEZqoMuiZoK/HkdJGsmOQxLIQdDwCqM+w728uKI3IzOIWdF4ILLc4k8TpiqsxqW3ESPbM48nP/8NzNuaISp2ugCtNfG49+uTx2/xXs3GjKd6oJrSry/8U0Bu4BDCuPYl8l8IVcQTEb2PasQzQAwyMkioVwYYMpe2Y+fHThp5N2KbGrM6X+KE5prQDfObQxT2Fcay/FYwEhuN40oCbiTD4LSi5sMCR9Cio2OeqVWRvxhvdMWnfj2XoTv+FjMQ0ITTPmSh/mNi7O4ww5NTga7LIKLl1Rx95yz9kobWdrvTP4n98d3mUcVHIzEld0O22ndA4UBgMOZ4sSmR2A/8GD7oyidnV0UmNLWLU5WL5fI7yhsQg1AUHdICvtJiWKWgSd6qXlC9sGJ22x5VEv3N3Gj8ORhDExNB7Od10ASsbEbqQjpZHCJEZaBh5qXr334n3uVyuOC5uTWeAbImrHGdgfZmSFvCTrlB4/hxKrLAVYv5akFXesmCCq8Iv3xM6/ObsRIbWa0QVnvMvbnNicVjUWLSAkF/+ndpFhIBwzcEpXruO+NuMWVPdk6HPlyMrBxNmSdRERcSrpracgNUdlltecLj1ychR9tpnm18latKI4O6V6ty5kWMxhStCJXVxxpSfxWieO5TSZ8jJGgDCyM9s=
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR0302MB5265.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(376005)(366007)(4143199003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-Original-0: =?utf-8?B?bzloTWMrbkNHNnBPWU5odGdScjRPdS9Sbk1KSkpyb25ON2xBMkxxcDVybDhU?=
+ =?utf-8?B?KzFwNVVCTk5GekF4cHZlSEVwN29ncmVQaGpGcndXUHpqNVFVQXRRNWpWUVNo?=
+ =?utf-8?B?QklyUEpoNlU3QVNtZWlRZVdTRGgvWk9QcE1wMXVlRW4xQnE0emJuQ0lpMExr?=
+ =?utf-8?B?U2lCZEhXbHExdnlqNzRrWkd1LzlManF0MTlObklTVFhJK1c5b1lFVllsZDNa?=
+ =?utf-8?B?RElRVVNPRGRFWjN5MnI2RzQvMEM2SVJWNzhEeXZ4MGxuNGtReUhuU1U0dk9k?=
+ =?utf-8?B?M2RPbVhYNlpKYm1qbGVWYTZ4K0U0UFJJbUUyV0g3SDVqTnVqeTYzSTZVanlo?=
+ =?utf-8?B?ZlRSN29pcGwxT0dvanRpaHZFUFB2aWkvbGVLRFZQazZRbERpTS93OE44TFJK?=
+ =?utf-8?B?bEhRS1FJUE5Zd1VIaWdJYzRCRzU0ZEtGTTB1bC9FcXVLK3BnREpNZ0JVNmlL?=
+ =?utf-8?B?K1VreVJUdkd2Rm1pY3A0MW8zbVRiZzlZUXIvTFhaVHg1ZmxkSXlFRmpCcnF5?=
+ =?utf-8?B?dWNWWWlKY2laa2V4VVhqQm1KbURLT2NwWmZTWjkzZk1tdFFhT3lBd1BnOWVi?=
+ =?utf-8?B?Q2RtbXpGc2RLcVY2NVRHYmJ1cTVZZFBGTUVIbndDNUYxd2ZNZjZUTGhMVGJP?=
+ =?utf-8?B?YTVqU2dwNFM3UThmcWxLTnhzcTlXZnB3c0FacEY4d3UrbDkvWW9zZDVQbER6?=
+ =?utf-8?B?QVJXUVJ2ZmtrdXc4Ty9ZQXRvOW44NnBuTlNTZkpDV1dqTFlMTmQxRDhHak11?=
+ =?utf-8?B?MTRWeEQrSldZNm5ZM3ltWm1yYmoyT1czS3NVVElaTDVXV1pQeWVGZlU1cXB1?=
+ =?utf-8?B?bFhSZnhjdmJpZ3I3alFxMmNrd1MyMnhONzdEOFBib1NNYjB6WWNZdUxlUUE5?=
+ =?utf-8?B?MGxNTGNJK3BmaGF1SGxoS1RNa2I5YkdocUtPblJyOE1TOWpiWnp3UnVsdkQr?=
+ =?utf-8?B?Y2xWZ1pXOHBwTWpWeStxQzhHbDh1Vk5VMDNEK0plaVhuRVBRYzVXV05uZEEv?=
+ =?utf-8?B?WUtiS0xLZlFBeGpEdzlsYURyZHFSOTZ0Z3FJSFMwLzlFc251WEcxU01CYnR0?=
+ =?utf-8?B?emV5M1FvTkx4MkptOW5nS3k2NXlYRFVvVS9lY0lVSkwvTmlzcjBhL1pBakFC?=
+ =?utf-8?B?dml0dzZuUmJWdmZURFExTTZjWGlzRmswZnhCSHp4V3l4M0Z5dzJjcWtKZ1RD?=
+ =?utf-8?B?YmtESTVkSnQ5OVJFcEl0R1pUWUlJSlRteVpvN2N1ZTJxbGttek11RXFReHJj?=
+ =?utf-8?B?UWZrRDVIOVpRallrYVlmdGs3aGZaU3JYWkdFUXRxeUovdXBWaTUrSnZGZ2g1?=
+ =?utf-8?B?MzNLU1lIUG9pT05KblJoNUQ5bG43cTI2bHRBeDAreTdPVUNLSTRydW51Y0x0?=
+ =?utf-8?B?T1l3WUZSSm5VRnZISVdMWnBkTGtwK2dsSEV1K0t6UFlZSlN6bTBGYXRac3VF?=
+ =?utf-8?B?SHpJYW9yaEF6N3hkN0dpdm5XK2tJL1Bjc2k4NkJVY3RIMmlmMmVVbWt6bStx?=
+ =?utf-8?B?L2tJOVJUeFdlUnQ1NnRockVhbndWT0ZtQVBPSW5rcjh4OUV0UG1YZkFXRjlE?=
+ =?utf-8?B?N3kvK3ZJczNsZFd3MDhycmdlWWxxUE9DdGViU3JLUWs0dFZtcnJFK1AxNGhq?=
+ =?utf-8?B?UkcxTHcrcS9ZQXpSMlFmZkRjOCtjdjJENkczTW03all6RG5aWGFFVU9xMXNi?=
+ =?utf-8?B?YWNtSGVOS1ZMMThaOUEzSGNLbGZrSDl0Z0xGZ3RocGVLbTFhTENCcEo5K250?=
+ =?utf-8?B?NS8xdFZPSmMwVGJyTWI2M2pFVnU4aGdpcTF6ZjRHT1EyMzlmdlVtNXJFbmxG?=
+ =?utf-8?B?enp3dWRybGpFcER6SjU3blBXak9zVmtLbGVOdW9hOTUwTjJYT1NvL1B4eDF2?=
+ =?utf-8?B?ZEIyaFZidkM2UFZvVDNXZ3ZYUTA5S3huandaSk0vc29ZampxSzZ0ckMyL0Nx?=
+ =?utf-8?B?ZXVMVnFHelYvbkp6NFFkcExYRWwvZUhranhJRzUrV0NHSGF3QkUrSUZxMC81?=
+ =?utf-8?B?NnhjbzJEcVRWN3FId0NGeWcydk9oT3VUempaR2NyRkhNRXR1UC8zOG8wRUgv?=
+ =?utf-8?B?M01ZVmwwcFd5Mkltb1lveUF4bENDNFpZQ0cwMlRNcWZkWEtaWGhvNTJ4SGwy?=
+ =?utf-8?B?UFdkYjI1eWJYOWdXVWdYN1J2WmE3ODJXbkY1REcxQndqQVFoaEhmTVFlNlJi?=
+ =?utf-8?B?NlE9PQ==?=
+Content-Type: multipart/alternative;
+        boundary="_000_KL1PR0302MB5265D9BE65AD05BB77C2F3F5F03E2KL1PR0302MB5265_"
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS8PR03MB8859
+Return-Path: julie.weintraub@ringcentral.com
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 8d281d1d-9c4d-4bf7-b16e-032d15de9f6c:0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: CH1PEPF0000AD81.namprd04.prod.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted: CH1PEPF0000AD81.namprd04.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 7f45be9e-d1bc-4dad-6997-08dc535be5dc
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?bW56bWhzNE5yZTFESzJJR3B5QXh2NzBuZmhQSTJxVG1NQVI3R3pxeXFMd09q?=
+ =?utf-8?B?cFkxUVJCTG9tTlBORy95YkgySjI1L2doVkQ1dHFxTGJlekEvRGIrQUpqVEtm?=
+ =?utf-8?B?OUVON0ljcDBRWnphU2xuWE9lQ041WlFkd0VPMjZ4QzNCaVE5b01lKzlmdnlM?=
+ =?utf-8?B?NGZ2Zm9YbDdYUlJIWitRbkJDNDdzMlU2eGhIU1RFZ3lNS3BSUXVpQ2JvK0I0?=
+ =?utf-8?B?UmNYUjc5Q3VyMVlUd2FUNGhDbzV0cHJ1UkVva3ZLU1JoRUpUTG83dEdkQ1Nk?=
+ =?utf-8?B?UVA2MTkyNW5IcjlON09Kb2xvc1UrNFUyTWgyZVNlcmoxTk9XU0wzL3NzaXp1?=
+ =?utf-8?B?a0Y0a2c4N2FWRzNLTVVMbzg0VTJyMVBXZ2hHOS9ER21UaklMYXoxZnFYOG9L?=
+ =?utf-8?B?K2ppQkRGRG1pQmhLVWxuMXZNcWhpdGpuS0JUbWdLSUZTenJYRWNFNEVlbEh1?=
+ =?utf-8?B?OHdvdWdJTjBBSHhOQXpJb0tuSU5QOUROV3VpNXdxL1VUWVp5TXBCcXI2Sm5B?=
+ =?utf-8?B?TlRjdlFOUkV0V2VGK1dEaG8yVVJHckNpWi9PUWZpNWw0VFVkRUk4anRvY29U?=
+ =?utf-8?B?enZzVUpCOENUR0dkODJqMDFNS2YweUZrUk0vaHBobEVibFdMN1kySC9RZis0?=
+ =?utf-8?B?SVFSczJBKytBWVRkNXlLVDdKV1daa1dBcGd2U3c4LzI2eHk5b1ZwN1M1TWp5?=
+ =?utf-8?B?ejJueDVwaTcxaXo3a2hiZ3NsTlZXY0tKampIcHBRbnh5WENQVHVCcG10TkI5?=
+ =?utf-8?B?TE50Y21aOThIendMTHZqR3BsZTJHVHJSSUhWS3N4eVBsdWd1ZmttaEU3dWEr?=
+ =?utf-8?B?NEpzcGNJOVlsSHQvQlNXWTN5Nk9RMXQwVjRlKzREdU1xSDFIVEh4aTB5elJW?=
+ =?utf-8?B?L28rK1B1RjRkeElPdTBRbU5zR1RvTCtGa2VrVkRTOWljLzJQOXA0YnRJa0pS?=
+ =?utf-8?B?YUVTK2I0Nk01MjBOM0c1SWZFdkd1eUlmZ05GWGVTUlUyV3d2Z0pQUTNEei9p?=
+ =?utf-8?B?eHZWYXF3UVpyVkt6RCt2NEJ6MmtCRmpxclBtOWp5MCtuNHZkYTVuR2VlN3lO?=
+ =?utf-8?B?MnBSY3N5TWdUeG02Vk44ekNvUE5pQS9PZnFDblZCUytDMVlHVy8xaTVrTUtO?=
+ =?utf-8?B?eWVHWUx3NmVSKzJTZ2JBd251ZDNlaURSUmExSkVQSVRYL1JQNENVeDRta05K?=
+ =?utf-8?B?SUpyUkU3STUwZ21aK0lKNjNBcDFJRzRGZUhGVGhxMkdxUnhhOFFnOG1oREQ1?=
+ =?utf-8?B?WHQreERHRGoxdFlmN3BSeTE4YWVLRXljNUdoa2l4V3dySU8zSkNtWHpYeWpJ?=
+ =?utf-8?B?L0pQVkJJNmtsREoyZWQ5OThRQmxpWEh5TFZMazJmNGRkYnV4djJ0QWNSRzFP?=
+ =?utf-8?B?S1ZnODhieVVJeExlYVRyNmFhRGpXSXNzNDBXbTlsSUM4cDl2b2J6WVk0c2VQ?=
+ =?utf-8?B?RWlFUmZKWndiNDE2TGRiTzdqTDJyRnZQeC83Tkp3R1JaUERFY3NPME5semtC?=
+ =?utf-8?B?dy9rbDNrdVE2L1pnbGtmQVA4TnltMGdtT0owYWtmekRrTXRlMmhrUjhCUENo?=
+ =?utf-8?B?eUxHQ01tTmtpUGJUb25hV2ErV3J5RTYzV0VCYjUwZjlYd2QyMEtkVHc4d0Nu?=
+ =?utf-8?B?NmhwdlpqR2hIaFFKRDRncXhSYm1JRzFFd0lNZkpkQmR6N2pvRGUrQlJWa2dz?=
+ =?utf-8?B?UVJjWGhkSEU0ZTE3OHRSVlhQaFZSTWVLMWl4TXkwSGZ6QVRuSExiZEoxU1p6?=
+ =?utf-8?B?MW5GN3ZQQTRjUm5CenFBYjdkMGMvN3gzWUlIMm56NFdwVEQzZHZabmt6c25R?=
+ =?utf-8?B?VkMraEdvZW5sUjhxWXdLdDlJc1o3RkJIbldDMFc4L1RvTEpHdlNFOXFpMWVj?=
+ =?utf-8?B?SWl2MTRJc3lCZ0hhYjJyZjhodFlvMFJOM1JBam0razVSelI1TDhYZS9BdENW?=
+ =?utf-8?B?anJsbzdEVk01dFRuTTM0Kzg5VUtpNHRLZmNYTFdvTGo3Uk4yV0Q4eUQwUW9M?=
+ =?utf-8?B?M1ZIOUFIU1VtRVo0cnZkTkU5TVEwTGM3TXVITlVQaHl4Z1pWTXdzQVB3Qmxw?=
+ =?utf-8?B?WHdVSUdJdnU2VmFYQm51a1NrL0ZIRkNsMUtDYUZLRFhOY0tMRWVwSEF3UDdw?=
+ =?utf-8?B?S3NUVVM0U1gxY1FiOHNrcFRuSmIrNnVwbFBZZnR0RjRyckRYSHNVZlhVb29X?=
+ =?utf-8?B?UnAwS0dqRW1hQ1VWZWlSV1hBWTlIa01HNyszVTdKZGo4TTA3ck1sUGM1OE5p?=
+ =?utf-8?B?T3JtWEhWdERyWEFjTEgzUHZVQVJnUW5Mak1JTVA4UGhnV3hSenRPbVpkYlFq?=
+ =?utf-8?B?dU1WR2x5dW1rYXRCSmE0Q09nZjMvdlRsMmpZcWVXNnd6Umh2OHY5V1RxQlFL?=
+ =?utf-8?B?dllhTUpBenVmMFhwaDBBSzY0UkRJcXRrOFlPNS9kN1FiK1A1Z3pDdEx0ajFI?=
+ =?utf-8?B?UStkelVmTHNPc01wT2NWOHJrUjgrQ2JHL0tIdjBrRnJheGlhSHJ2b2VFZVY2?=
+ =?utf-8?B?blhtK3ZiYTczOHk5QW03UE5UdVFKbDVad1MrZWJzUVQrMVY2L1BaYlhyZ0Nx?=
+ =?utf-8?B?b3NoS3M4SHNhREI4OWRsT3hnMllwS295V2Z1MHJLbVBZbEZQMDhsZFp0QnRP?=
+ =?utf-8?Q?ZGt3UIILyEhJTYdrKbVDHsulR+iU=3D?=
+X-Forefront-Antispam-Report: CIP:40.107.215.128;CTRY:SG;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:APC01-SG2-obe.outbound.protection.outlook.com;PTR:mail-sgaapc01on2128.outbound.protection.outlook.com;CAT:NONE;SFS:(13230031)(4143199003);DIR:INB;
+X-MS-Exchange-ATPSafeLinks-Stat: 0
+X-MS-Exchange-ATPSafeLinks-BitVector: 0:0x0|0x0|0x0|0x0|0x0|0x0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Apr 2024 21:28:53.8011
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7f45be9e-d1bc-4dad-6997-08dc535be5dc
+X-MS-Exchange-CrossTenant-Id: 8d281d1d-9c4d-4bf7-b16e-032d15de9f6c
+X-MS-Exchange-CrossTenant-AuthSource: CH1PEPF0000AD81.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR01MB8484
+X-OrganizationHeadersPreserved: SJ2PR01MB8484.prod.exchangelabs.com
+X-CrossPremisesHeadersPromoted: UTDEX04.campus.ad.utdallas.edu
+X-CrossPremisesHeadersFiltered: UTDEX04.campus.ad.utdallas.edu
+X-OriginatorOrg: utdallas.edu
+
+
+
+From: Julie Weintraub <julie.weintraub@ringcentral.com>
+Subject: Hi Vinay, RingCentral⁠ is hiring a Technical Account Manager⁠
+Date: Tue, 02 Apr 2024 21:28:47 GMT
+To: Vinay Gujar <vpg170030@utdallas.edu>
+
+Hi Vinay⁠,
+
+My name is Julie and I am the Sr. Recruiter here at RingCentral⁠.  I came across your profile and think your skills and experience are a great fit for the Technical Account Manager⁠ position I am recruiting for.
+
+RingCentral⁠⁠ is a +$2 Billion annual revenue leader in cloud communications and collaboration software. With our double-digit annual growth and partnerships with market leaders like Verizon and Mitel our future is very bright.
+
+
+I’d love to tell you more about this Technical Account Manager⁠ role and learn more about your background. Here's the job description: https://urldefense.com/v3/__https://nam02.safelinks.protection.outlook.com/?url=https*3A*2F*2Fringcentral.wd1.myworkdayjobs.com*2Fen-US*2FRingCentral_Careers*2Fjob*2FTechnical-Account-Manager_R071207&data=05*7C02*7Cvpg170030*40utdallas.edu*7C7f45be9ed1bc4dad699708dc535be5dc*7C8d281d1d9c4d4bf7b16e032d15de9f6c*7C0*7C0*7C638476901361617177*7CUnknown*7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0*3D*7C0*7C*7C*7C&sdata=gITnW4VVMguN*2BCqEDtXUxtU0JYA9anrSJsoGhaopXOc*3D&reserved=0__;JSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUl!!J-1DKIBqn-Pi!EsDq38nVwqjr-w-oc18yQEWji1woOVsMqoI2ZR5149em5dQ65m8Mi8kFm_ttL25QXTUOu4KiXcFKglVw7-OK4UT1lqrvl-Rr3N3MsQ$ <https://urldefense.com/v3/__https://nam02.safelinks.protection.outlook.com/?url=https*3A*2F*2Fmessage-cb.findem.ai*2Ft*3Fi*3D660c77b4be24544d3819c81c*26u*3Dhttps*253A*252F*252Fringcentral.wd1.myworkdayjobs.com*252Fen-US*252FRingCentral_Careers*252Fjob*252FTechnical-Account-Manager_R071207&data=05*7C02*7Cvpg170030*40utdallas.edu*7C7f45be9ed1bc4dad699708dc535be5dc*7C8d281d1d9c4d4bf7b16e032d15de9f6c*7C0*7C0*7C638476901361617177*7CUnknown*7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0*3D*7C0*7C*7C*7C&sdata=pt6YWfHeYslnoF*2Bv1VXIMCIGo3J6UJMIZtGqhiSXYxw*3D&reserved=0__;JSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSU!!J-1DKIBqn-Pi!EsDq38nVwqjr-w-oc18yQEWji1woOVsMqoI2ZR5149em5dQ65m8Mi8kFm_ttL25QXTUOu4KiXcFKglVw7-OK4UT1lqrvl-RySBdhAg$ >⁠
+
+
+If this opportunity sounds interesting, simply respond to this email with your availability.
+
+I look forward to hearing from you!
+
+Julie Weintraub
+
+Sr. Recruiter⁠
+[https://urldefense.com/v3/__https://nam02.safelinks.protection.outlook.com/?url=https*3A*2F*2Fcamp-files.s3.us-east-2.amazonaws.com*2F62979c0dbddb6e5517692c01*2F6580ab973c706bb15549703c&data=05*7C02*7Cvpg170030*40utdallas.edu*7C7f45be9ed1bc4dad699708dc535be5dc*7C8d281d1d9c4d4bf7b16e032d15de9f6c*7C0*7C0*7C638476901361617177*7CUnknown*7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0*3D*7C0*7C*7C*7C&sdata=d0bM4pMsO45pHnr4xFjPuoMkMS1y8BPRDsAmfo*2FyKtw*3D&reserved=0__;JSUlJSUlJSUlJSUlJSUlJSUlJSUlJQ!!J-1DKIBqn-Pi!EsDq38nVwqjr-w-oc18yQEWji1woOVsMqoI2ZR5149em5dQ65m8Mi8kFm_ttL25QXTUOu4KiXcFKglVw7-OK4UT1lqrvl-SrHwWdqA$ ]
+
+Unsubscribe<https://urldefense.com/v3/__https://nam02.safelinks.protection.outlook.com/?url=https*3A*2F*2Fpub.findem.ai*2Fpub*2Funsubscribe*2F660315e836d626163e956c09*2F660315e81d441d33b801b353*2F660c683c7bd2383f6011afe1*2F660c77b4be24544d3819c81c*2Fvpg170030*40utdallas.edu*2Fjulie.weintraub*40ringcentral.com&data=05*7C02*7Cvpg170030*40utdallas.edu*7C7f45be9ed1bc4dad699708dc535be5dc*7C8d281d1d9c4d4bf7b16e032d15de9f6c*7C0*7C0*7C638476901361617177*7CUnknown*7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0*3D*7C0*7C*7C*7C&sdata=K4*2BpDnSoZp2q8dH1Cs65FABfmAfhINFuQuffC14Q1EU*3D&reserved=0__;JSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUl!!J-1DKIBqn-Pi!EsDq38nVwqjr-w-oc18yQEWji1woOVsMqoI2ZR5149em5dQ65m8Mi8kFm_ttL25QXTUOu4KiXcFKglVw7-OK4UT1lqrvl-QCF0RD-A$ >
+
+[https://urldefense.com/v3/__https://nam02.safelinks.protection.outlook.com/?url=https*3A*2F*2Fmessage-cb.findem.ai*2Ft*3Fi*3D660c77b4be24544d3819c81c&data=05*7C02*7Cvpg170030*40utdallas.edu*7C7f45be9ed1bc4dad699708dc535be5dc*7C8d281d1d9c4d4bf7b16e032d15de9f6c*7C0*7C0*7C638476901361617177*7CUnknown*7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0*3D*7C0*7C*7C*7C&sdata=XIyIgcZTZcMMAooWmp6qu9BRRnMkne8DYwp4mUU2qeQ*3D&reserved=0__;JSUlJSUlJSUlJSUlJSUlJSUlJSUlJQ!!J-1DKIBqn-Pi!EsDq38nVwqjr-w-oc18yQEWji1woOVsMqoI2ZR5149em5dQ65m8Mi8kFm_ttL25QXTUOu4KiXcFKglVw7-OK4UT1lqrvl-QfsA8c0g$ ]
+
+
+
+
+--b1_11885fd3ea338f04de950704ee6b30f5--
+
+
+--1162233858postino9.prima.com.ar2257932--

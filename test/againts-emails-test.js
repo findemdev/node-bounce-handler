@@ -132,4 +132,17 @@ describe("Test if an email is a bounce message", () => {
       done();
     })
   });
+
+  it("Should detect a bounce with callback for subj containing undeliverable by isBouncedEmail function", () => {
+    detect.isBouncedEmail(fs.readFileSync(__dirname + '/eml/bounces/subj_undeliverable.eml').toString(), result => {
+      expect(result).to.be.true;
+    })
+  });
+
+  it("Should detect a bounce with callback for subj containing undeliverable by getBouncedEmailDetail function", () => {
+    detect.getBouncedEmailDetail(fs.readFileSync(__dirname + '/eml/bounces/subj_undeliverable.eml').toString()).then(res => {
+      console.log(`Result ===> ${JSON.stringify(res)}`)
+      expect(res.is).to.be.string("bounce");
+    })
+  });
 });
